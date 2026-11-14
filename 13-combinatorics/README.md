@@ -1,16 +1,23 @@
 # 13. Combinatorics
 
-This module covers counting principles, factorials, binomial coefficients, partition identities, and inclusion-exclusion.
+Master learning directory for **13. Combinatorics** containing detailed subtopic pages, C++20 implementations, and practice progressions.
 
----
+## Subtopic Directory
 
-## Subtopics & Planned Modules
-
-1. **`permutations-and-combinations/`**: Fundamental rules of sum and product, $N!$, $P(n, k)$, $C(n, k)$.
-2. **`binomial-coefficients/`**: Pascal's identity, precomputation of factorials and inverse factorials under prime modulo.
-3. **`stars-and-bars/`**: Distributing $N$ identical items into $K$ distinct bins (weak and strict compositions).
-4. **`inclusion-exclusion/`**: Principle of Inclusion-Exclusion (PIE) for overlapping set counting.
-5. **`catalan-numbers/`**: Valid parentheses expressions, non-crossing partitions, Dyck paths: $C_n = \frac{1}{n+1}\binom{2n}{n}$.
-6. **`derangements/`**: Subfactorial $!n = (n-1)(!(n-1) + !(n-2))$, permutations without fixed points.
-7. **`pigeonhole-principle/`**: Existence proofs, modular residue clustering, constructive bounds.
-8. **`generating-functions/`**: Formal power series representations for sequence counting.
+| No. | Subtopic | Learning Material | Difficulty | Status |
+|:---:|:---|:---:|:---:|:---:|
+| 1 | Permutations, Combinations and Basic Counting | [Open Topic](permutations-and-combinations/README.md) | Beginner | Not Started |
+| 2 | Factorials and Precomputed Modular Inverses | [Open Topic](factorials-and-inverses/README.md) | Beginner | Not Started |
+| 3 | Binomial Coefficients nCr and Multi-Query Precomputation | [Open Topic](binomial-coefficients/README.md) | Beginner | Not Started |
+| 4 | Pascal's Triangle and Recurrence Identities | [Open Topic](pascals-triangle/README.md) | Beginner | Not Started |
+| 5 | Stars and Bars Method for Integer Partitions | [Open Topic](stars-and-bars/README.md) | Intermediate | Not Started |
+| 6 | Pigeonhole Principle and Existence Proofs | [Open Topic](pigeonhole-principle/README.md) | Beginner | Not Started |
+| 7 | Principle of Inclusion-Exclusion (PIE) | [Open Topic](inclusion-exclusion-principle/README.md) | Intermediate | Not Started |
+| 8 | Catalan Numbers and Dyck Paths | [Open Topic](catalan-numbers/README.md) | Intermediate | Not Started |
+| 9 | Derangements and Permutations Without Fixed Points | [Open Topic](derangements/README.md) | Intermediate | Not Started |
+| 10 | Generating Functions for Sequence Representation | [Open Topic](generating-functions-basics/README.md) | Advanced | Not Started |
+| 11 | Combinatorial Identities (Vandermonde, Hockey Stick) | [Open Topic](combinatorial-identities/README.md) | Intermediate | Not Started |
+| 12 | Burnside's Lemma for Rotational Equivalence | [Open Topic](burnsides-lemma/README.md) | Expert | Not Started |
+| 13 | Polya Enumeration Theorem for Necklaces | [Open Topic](polya-enumeration-theorem/README.md) | Expert | Not Started |
+| 14 | Multinomial Coefficients and Multiset Partitions | [Open Topic](multinomial-coefficients/README.md) | Intermediate | Not Started |
+| 15 | Lucas' Theorem for Binomial Coefficients Modulo Small Primes | [Open Topic](lucas-theorem/README.md) | Advanced | Not Started |

@@ -5,289 +5,684 @@
 [![Compiler: G++ 15.2.0](https://img.shields.io/badge/Compiler-G%2B%2B%2015.2.0-red.svg)](https://gcc.gnu.org/)
 [![Platform: Codeforces](https://img.shields.io/badge/Platform-Codeforces-yellow.svg)](https://codeforces.com/)
 [![Curriculum: USACO Guide](https://img.shields.io/badge/Curriculum-USACO%20Guide-green.svg)](https://usaco.guide/)
+[![Curriculum: CP-Algorithms](https://img.shields.io/badge/Curriculum-CP--Algorithms-orange.svg)](https://cp-algorithms.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
-An institutional-grade, rigorously structured Competitive Programming ecosystem engineered to take a Computer Science student from core algorithmic fundamentals to Codeforces Master rating and Quantitative Developer problem-solving proficiency.
+An institutional-grade, comprehensively structured Competitive Programming repository covering **all 23 major algorithmic and mathematical domains**, expanded into **426 dedicated subtopic learning modules**. Engineered specifically for C++20 development, Codeforces Grandmaster progression, and Quantitative Developer preparation.
 
 ---
 
-## Technical Environment
+## Technical & Compilation Environment
 
-- **Host System**: Windows with VMware Workstation
-- **Guest / Dev Environment**: Ubuntu Linux
-- **Primary Language**: C++ (Standard: **C++20**)
-- **Target Compiler**: `g++ 15.2.0`
-- **Text Editor**: Gedit / CLI
+- **Development Environment**: Ubuntu Linux running in VMware on Windows
+- **Compiler**: `g++ 15.2.0` (or GCC/Clang with full modern C++20 support)
+- **Editor**: Gedit / CLI
 - **Standard Compilation Command**:
   ```bash
   g++ -std=c++20 -O2 -Wall -Wextra -Wshadow -Wconversion solution.cpp -o solution
   ```
-- **Fast Execution**:
+- **Execution & I/O Redirection**:
   ```bash
-  ./solution < input.txt > output.txt
+  ./solution < in.txt > out.txt
   ```
 
 ---
 
-## Repository Directory Architecture
+## Repository Architecture
 
 ```text
 competitive-programming-mastery/
-├── README.md                          # Repository Portal & Master Index
+├── README.md                          # Master Portal & 426-Topic Clickable Index
 ├── ROADMAP.md                         # 5-Stage Progressive Learning Roadmap
-├── PROGRESS.md                        # Live Progress Dashboard & Checklists
-├── RESOURCES.md                       # Verification Protocol & Source Directory
-├── CONTRIBUTING.md                    # C++20 & Formatting Guidelines
+├── PROGRESS.md                        # Master Progress Dashboard & Verification Checklists
+├── RESOURCES.md                       # Verification Protocol & Authoritative Catalog
+├── CONTRIBUTING.md                    # C++20 Standards, Style Guide & Directory Rules
 ├── LICENSE                            # MIT License
+├── validate_repo.mjs                  # Automated Quality-Control & Link Validation Script
 │
-├── 00-cpp-foundations/                # C++20, STL Containers, Lambdas, Fast I/O
-├── 01-complexity-analysis/            # Asymptotics, Recurrences, Memory Limits
+├── 00-cpp-foundations/                # Variables, Types, STL Containers, C++20 Features
+├── 01-complexity-analysis/            # Asymptotics, Recurrences, Constraint Mapping
 ├── 02-basic-problem-solving/          # Prefix Sums, Two Pointers, Difference Arrays
-├── 03-searching-and-optimisation/     # Binary Search on Answer, Ternary Search
-├── 04-recursion-and-backtracking/     # Pruning, Branch & Bound, State Trees
+├── 03-searching-and-optimisation/     # Discrete & Predicate Binary Search, Ternary Search
+├── 04-recursion-and-backtracking/     # State Trees, Pruning, Branch & Bound
 ├── 05-sorting/                        # Stability, Custom Comparators, Radix/Merge
-├── 06-basic-data-structures/          # Monotonic Stacks, Deques, Circular Queues
-├── 07-trees/                          # LCA, Binary Lifting, Tree DP, HLD, Centroid
-├── 08-graphs/                         # BFS/DFS, Shortest Paths, MST, DSU, 2-SAT
-├── 09-dynamic-programming/            # Knapsack, Interval, Digit, Bitmask, CHT
-├── 10-advanced-data-structures/       # Segment Tree, Lazy, Treap, Persistent ST
-├── 11-string-algorithms/              # Hashing, KMP, Z-Algorithm, Suffix Automaton
-├── 12-number-theory/                  # Sieve, Modular Arithmetic, CRT, Mobius
-├── 13-combinatorics/                  # Stars & Bars, Catalan, Lucas Theorem
-├── 14-bit-manipulation/               # Bitmasks, SOS DP, Binary Tries
-├── 15-probability-and-statistics/     # Linearity of Expectation, Random Walks
-├── 16-game-theory/                    # Nim, Sprague-Grundy Theorem
-├── 17-computational-geometry/         # Vectors, Convex Hull, Sweep Line
-├── 18-advanced-graph-theory/          # Network Flow (Dinic), Hopcroft-Karp
-├── 19-advanced-algorithmic-techniques/# Mo's Algorithm, Sqrt Decomposition, CDQ
-├── 20-advanced-mathematics/           # Matrix Exponentiation, FFT, NTT
-├── 21-contest-engineering/            # Stress Testing, Fast I/O, Stack Overflow
-├── 22-quant-hft-specialisation/       # Low-Latency Concepts, Cache-Locality
+├── 06-basic-data-structures/          # Monotonic Stacks/Queues, Deques, Circular Buffers
+├── 07-trees/                          # LCA, Binary Lifting, Tree DP, HLD, Centroids
+├── 08-graphs/                         # BFS/DFS, Shortest Paths, MST, DSU, 2-SAT, Flows
+├── 09-dynamic-programming/            # Knapsack, Interval, Digit, Bitmask, CHT, Aliens
+├── 10-advanced-data-structures/       # Segment Tree, Lazy, Treap, Persistent ST, Mo
+├── 11-string-algorithms/              # Rolling Hash, KMP, Z-Algorithm, Suffix Automaton
+├── 12-number-theory/                  # Sieve, Modular Arithmetic, CRT, Mobius, Pollard Rho
+├── 13-combinatorics/                  # Stars & Bars, Catalan Numbers, Lucas, Polya
+├── 14-bit-manipulation/               # Bitmasks, SOS DP, Binary Tries, Linear Basis
+├── 15-probability-and-statistics/     # Linearity of Expectation, Markov Chains
+├── 16-game-theory/                    # Nim, Sprague-Grundy Theorem, Mex Rule
+├── 17-computational-geometry/         # Vectors, Convex Hull, Sweep Line, Half-Plane
+├── 18-advanced-graph-theory/          # Dinic Max-Flow, Hopcroft-Karp, MCMF, Connectivity
+├── 19-advanced-algorithmic-techniques/# Parallel Binary Search, CDQ, Small-to-Large
+├── 20-advanced-mathematics/           # Matrix Exponentiation, FFT, NTT, Lagrange
+├── 21-contest-engineering/            # Stress Testing Harness, Overflow, Sanitizers
+├── 22-quant-hft-specialisation/       # Cache Locality, Low-Latency L2 Order Book
 │
-├── 23-codeforces/                     # Categorized Solved Problems (800 - 2000+)
-│   ├── 800/
-│   ├── 900/
-│   ├── 1000/
-│   ├── 1100/
-│   ├── 1200/
-│   ├── 1300/
-│   ├── 1400/
-│   ├── 1500/
-│   ├── 1600/
-│   ├── 1700/
-│   ├── 1800/
-│   ├── 1900/
-│   ├── 2000/
-│   └── 2000-plus/
-│
-├── 24-contest-practice/               # Virtual Contest Logs & Post-Mortem Reviews
+├── 23-codeforces/                     # Problem Solutions Categorized by Rating (800 - 2000+)
+├── 24-contest-practice/               # Virtual Contest Logs & Upsolving Protocols
 ├── 25-templates/                      # Battle-Tested C++20 CP Templates & Boilerplates
-├── 26-mistakes-and-revisions/         # Error Classification & Active Recall Logs
-└── 27-personal-notes/                 # Ad-hoc Observations & Mathematical Proofs
+├── 26-mistakes-and-revisions/         # Error Taxonomy & Active Recall Ledger
+└── 27-personal-notes/                 # Ad-hoc Pattern Discoveries & Mathematical Proofs
 ```
 
 ---
 
-## Complete Curriculum Topic Index
+## Master Topic Index (426 Topics with Direct Learning Links)
 
-### [00. C++ Foundations and STL](00-cpp-foundations/)
-- Variables, Data Types, and Type Limits
-- Fast I/O and Buffer Management
-- Sequences: `std::vector`, `std::deque`, `std::array`
-- Node-based Containers: `std::set`, `std::multiset`, `std::map`, `std::unordered_map`
-- Container Adaptors: `std::stack`, `std::queue`, `std::priority_queue`
-- Modern C++20 Features: `std::ranges`, `std::views`, structured bindings, lambdas
-- Custom Comparators & Strict Weak Ordering
-- Standard Library Algorithms: `std::sort`, `std::lower_bound`, `std::upper_bound`
-- Memory Safety, Recursion Limits, and Pointer/Reference Semantics
+Every single subtopic in the curriculum has its own dedicated directory and learning page. Click any link in the **Learning Material** column to access its full documentation, C++20 reference code, theoretical proofs, visual diagrams, and graded problems.
 
-### [01. Complexity Analysis](01-complexity-analysis/)
-- Asymptotic Notations: Big-$O$, Big-$\Theta$, Big-$\Omega$
-- Operations-per-second constraints and contest time limits
-- Recurrence Relations & The Master Theorem
-- Space Complexity, Auxiliary Memory, and Cache Locality
 
-### [02. Basic Problem-Solving](02-basic-problem-solving/)
-- Simulation and Invariant Preservation
-- Prefix Sums (1D and 2D) & Difference Arrays
-- Two Pointers Technique and Sliding Window Invariants
-- Coordinate Compression
-- Basic Greedy Choice Property and Exchange Arguments
+### 00. C++ Foundations and STL
 
-### [03. Searching and Optimisation](03-searching-and-optimisation/)
-- Monotonic Predicate Invariants
-- Binary Search on Discrete Spaces and Floating-Point Ranges
-- Binary Search on Answer
-- Ternary Search for Unimodal Functions
-- Meet in the Middle
+Master Domain Index: [`Open Domain Index`](00-cpp-foundations/README.md)
 
-### [04. Recursion and Backtracking](04-recursion-and-backtracking/)
-- Recursion Trees and Call Stack Mechanics
-- Permutation, Subset, and Combination Generation
-- Pruning and Branch-and-Bound Heuristics
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 1 | Variables and Primitive Data Types | [Open Topic](00-cpp-foundations/variables-and-data-types/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/variables-and-data-types/video-resources.md) \| [Practice](00-cpp-foundations/variables-and-data-types/practice-problems.md) |
+| 2 | Type Conversions and Explicit Casting | [Open Topic](00-cpp-foundations/type-conversions/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/type-conversions/video-resources.md) \| [Practice](00-cpp-foundations/type-conversions/practice-problems.md) |
+| 3 | Operators and Evaluation Precedence | [Open Topic](00-cpp-foundations/operators-and-expressions/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/operators-and-expressions/video-resources.md) \| [Practice](00-cpp-foundations/operators-and-expressions/practice-problems.md) |
+| 4 | Conditional Statements and Branching | [Open Topic](00-cpp-foundations/conditions-and-branching/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/conditions-and-branching/video-resources.md) \| [Practice](00-cpp-foundations/conditions-and-branching/practice-problems.md) |
+| 5 | Loops, Iteration Invariants and Ranges | [Open Topic](00-cpp-foundations/loops-and-iterations/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/loops-and-iterations/video-resources.md) \| [Practice](00-cpp-foundations/loops-and-iterations/practice-problems.md) |
+| 6 | Functions, Inline Evaluation and Modularity | [Open Topic](00-cpp-foundations/functions-and-inline/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/functions-and-inline/video-resources.md) \| [Practice](00-cpp-foundations/functions-and-inline/practice-problems.md) |
+| 7 | Recursion Basics and Stack Frames | [Open Topic](00-cpp-foundations/recursion-basics/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/recursion-basics/video-resources.md) \| [Practice](00-cpp-foundations/recursion-basics/practice-problems.md) |
+| 8 | Pointers, Memory Addresses and Dereferencing | [Open Topic](00-cpp-foundations/pointers-and-memory/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/pointers-and-memory/video-resources.md) \| [Practice](00-cpp-foundations/pointers-and-memory/practice-problems.md) |
+| 9 | References, Lvalues and Rvalues | [Open Topic](00-cpp-foundations/references-and-aliasing/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/references-and-aliasing/video-resources.md) \| [Practice](00-cpp-foundations/references-and-aliasing/practice-problems.md) |
+| 10 | Fixed Arrays and Multidimensional Grids | [Open Topic](00-cpp-foundations/arrays-and-multidimensional/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/arrays-and-multidimensional/video-resources.md) \| [Practice](00-cpp-foundations/arrays-and-multidimensional/practice-problems.md) |
+| 11 | Strings, Character Encoding and std::string_view | [Open Topic](00-cpp-foundations/strings-and-string-view/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/strings-and-string-view/video-resources.md) \| [Practice](00-cpp-foundations/strings-and-string-view/practice-problems.md) |
+| 12 | Structures, Classes and Encapsulation | [Open Topic](00-cpp-foundations/structures-and-classes/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/structures-and-classes/video-resources.md) \| [Practice](00-cpp-foundations/structures-and-classes/practice-problems.md) |
+| 13 | Function and Class Templates | [Open Topic](00-cpp-foundations/templates-and-generics/README.md) | Intermediate | Not Started | [Videos](00-cpp-foundations/templates-and-generics/video-resources.md) \| [Practice](00-cpp-foundations/templates-and-generics/practice-problems.md) |
+| 14 | Lambda Expressions and Capture Semantics | [Open Topic](00-cpp-foundations/lambda-functions/README.md) | Intermediate | Not Started | [Videos](00-cpp-foundations/lambda-functions/video-resources.md) \| [Practice](00-cpp-foundations/lambda-functions/practice-problems.md) |
+| 15 | C++17/20 Structured Bindings and Deconstruction | [Open Topic](00-cpp-foundations/structured-bindings/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/structured-bindings/video-resources.md) \| [Practice](00-cpp-foundations/structured-bindings/practice-problems.md) |
+| 16 | Iterators, Sentinels and C++20 std::ranges | [Open Topic](00-cpp-foundations/iterators-and-ranges/README.md) | Intermediate | Not Started | [Videos](00-cpp-foundations/iterators-and-ranges/video-resources.md) \| [Practice](00-cpp-foundations/iterators-and-ranges/practice-problems.md) |
+| 17 | std::vector Dynamic Array and Memory Geometry | [Open Topic](00-cpp-foundations/vector/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/vector/video-resources.md) \| [Practice](00-cpp-foundations/vector/practice-problems.md) |
+| 18 | std::pair and std::tuple Heterogeneous Tuples | [Open Topic](00-cpp-foundations/pairs-and-tuples/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/pairs-and-tuples/video-resources.md) \| [Practice](00-cpp-foundations/pairs-and-tuples/practice-problems.md) |
+| 19 | std::stack Container Adaptor and LIFO Mechanics | [Open Topic](00-cpp-foundations/stack/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/stack/video-resources.md) \| [Practice](00-cpp-foundations/stack/practice-problems.md) |
+| 20 | std::queue Container Adaptor and FIFO Mechanics | [Open Topic](00-cpp-foundations/queue/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/queue/video-resources.md) \| [Practice](00-cpp-foundations/queue/practice-problems.md) |
+| 21 | std::deque Double-Ended Queue Block Allocation | [Open Topic](00-cpp-foundations/deque/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/deque/video-resources.md) \| [Practice](00-cpp-foundations/deque/practice-problems.md) |
+| 22 | std::priority_queue and Binary Heaps | [Open Topic](00-cpp-foundations/priority-queue/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/priority-queue/video-resources.md) \| [Practice](00-cpp-foundations/priority-queue/practice-problems.md) |
+| 23 | std::set and std::multiset Red-Black Trees | [Open Topic](00-cpp-foundations/set-and-multiset/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/set-and-multiset/video-resources.md) \| [Practice](00-cpp-foundations/set-and-multiset/practice-problems.md) |
+| 24 | std::map and std::multimap Ordered Dictionaries | [Open Topic](00-cpp-foundations/map-and-multimap/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/map-and-multimap/video-resources.md) \| [Practice](00-cpp-foundations/map-and-multimap/practice-problems.md) |
+| 25 | std::unordered_set Hash Sets and Anti-Hash Defense | [Open Topic](00-cpp-foundations/unordered-set/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/unordered-set/video-resources.md) \| [Practice](00-cpp-foundations/unordered-set/practice-problems.md) |
+| 26 | std::unordered_map Hash Maps and Bucket Geometry | [Open Topic](00-cpp-foundations/unordered-map/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/unordered-map/video-resources.md) \| [Practice](00-cpp-foundations/unordered-map/practice-problems.md) |
+| 27 | std::bitset and Bit-Level Vectorization | [Open Topic](00-cpp-foundations/bitset/README.md) | Intermediate | Not Started | [Videos](00-cpp-foundations/bitset/video-resources.md) \| [Practice](00-cpp-foundations/bitset/practice-problems.md) |
+| 28 | STL Sorting Algorithms (std::sort, std::stable_sort) | [Open Topic](00-cpp-foundations/stl-sorting-algorithms/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/stl-sorting-algorithms/video-resources.md) \| [Practice](00-cpp-foundations/stl-sorting-algorithms/practice-problems.md) |
+| 29 | Custom Comparators and Strict Weak Ordering | [Open Topic](00-cpp-foundations/custom-comparators/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/custom-comparators/video-resources.md) \| [Practice](00-cpp-foundations/custom-comparators/practice-problems.md) |
+| 30 | STL Binary Search (lower_bound, upper_bound) | [Open Topic](00-cpp-foundations/binary-search-stl/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/binary-search-stl/video-resources.md) \| [Practice](00-cpp-foundations/binary-search-stl/practice-problems.md) |
+| 31 | Numeric Algorithms (accumulate, iota, gcd, lcm) | [Open Topic](00-cpp-foundations/numeric-algorithms/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/numeric-algorithms/video-resources.md) \| [Practice](00-cpp-foundations/numeric-algorithms/practice-problems.md) |
+| 32 | Prefix Operations (std::partial_sum, std::inclusive_scan) | [Open Topic](00-cpp-foundations/prefix-operations-stl/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/prefix-operations-stl/video-resources.md) \| [Practice](00-cpp-foundations/prefix-operations-stl/practice-problems.md) |
+| 33 | Permutation Traversal with std::next_permutation | [Open Topic](00-cpp-foundations/next-permutation/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/next-permutation/video-resources.md) \| [Practice](00-cpp-foundations/next-permutation/practice-problems.md) |
+| 34 | C++20 Concepts, Ranges and Bit Operations | [Open Topic](00-cpp-foundations/modern-cpp20-features/README.md) | Intermediate | Not Started | [Videos](00-cpp-foundations/modern-cpp20-features/video-resources.md) \| [Practice](00-cpp-foundations/modern-cpp20-features/practice-problems.md) |
+| 35 | High-Throughput Fast I/O Systems | [Open Topic](00-cpp-foundations/fast-io/README.md) | Beginner | **Completed** | [Videos](00-cpp-foundations/fast-io/video-resources.md) \| [Practice](00-cpp-foundations/fast-io/practice-problems.md) |
+| 36 | Integer Overflow Prevention (__int128, int64_t) | [Open Topic](00-cpp-foundations/integer-overflow-prevention/README.md) | Beginner | Not Started | [Videos](00-cpp-foundations/integer-overflow-prevention/video-resources.md) \| [Practice](00-cpp-foundations/integer-overflow-prevention/practice-problems.md) |
+| 37 | Memory Allocation, Stack Limits and Alignment | [Open Topic](00-cpp-foundations/memory-management-and-limits/README.md) | Intermediate | Not Started | [Videos](00-cpp-foundations/memory-management-and-limits/video-resources.md) \| [Practice](00-cpp-foundations/memory-management-and-limits/practice-problems.md) |
 
-### [05. Sorting Algorithms](05-sorting/)
-- Comparison Sorts: Merge Sort, Quick Sort, Heap Sort
-- Non-Comparison Sorts: Counting Sort, Radix Sort
-- Stability Properties and In-Place Mechanics
+### 01. Complexity Analysis
 
-### [06. Basic Data Structures](06-basic-data-structures/)
-- Stacks, Queues, and Circular Buffers
-- Monotonic Stack (Next Greater / Smaller Element)
-- Monotonic Queue (Sliding Window Minimum / Maximum)
-- Binary Heaps & Priority Queues
+Master Domain Index: [`Open Domain Index`](01-complexity-analysis/README.md)
 
-### [07. Trees](07-trees/)
-- Tree Representations, DFS/BFS traversals, Depth & Subtree Sizes
-- Tree Diameter and Centroid Determination
-- Lowest Common Ancestor (Binary Lifting & Euler Tour + RMQ)
-- Tree Dynamic Programming & Rerooting DP
-- Heavy-Light Decomposition (HLD)
-- Centroid Decomposition
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 38 | Big-O Notation and Upper Bounds | [Open Topic](01-complexity-analysis/big-o-notation/README.md) | Beginner | Not Started | [Videos](01-complexity-analysis/big-o-notation/video-resources.md) \| [Practice](01-complexity-analysis/big-o-notation/practice-problems.md) |
+| 39 | Big-Theta and Big-Omega Tight Asymptotics | [Open Topic](01-complexity-analysis/big-theta-and-big-omega/README.md) | Beginner | Not Started | [Videos](01-complexity-analysis/big-theta-and-big-omega/video-resources.md) \| [Practice](01-complexity-analysis/big-theta-and-big-omega/practice-problems.md) |
+| 40 | Time Complexity Formal Derivations | [Open Topic](01-complexity-analysis/time-complexity-analysis/README.md) | Beginner | Not Started | [Videos](01-complexity-analysis/time-complexity-analysis/video-resources.md) \| [Practice](01-complexity-analysis/time-complexity-analysis/practice-problems.md) |
+| 41 | Space Complexity and Auxiliary Memory | [Open Topic](01-complexity-analysis/space-complexity-analysis/README.md) | Beginner | Not Started | [Videos](01-complexity-analysis/space-complexity-analysis/video-resources.md) \| [Practice](01-complexity-analysis/space-complexity-analysis/practice-problems.md) |
+| 42 | Amortised Analysis (Aggregate, Banker, Potential) | [Open Topic](01-complexity-analysis/amortised-analysis/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/amortised-analysis/video-resources.md) \| [Practice](01-complexity-analysis/amortised-analysis/practice-problems.md) |
+| 43 | Worst-Case, Average-Case and Best-Case Analysis | [Open Topic](01-complexity-analysis/worst-average-best-case/README.md) | Beginner | Not Started | [Videos](01-complexity-analysis/worst-average-best-case/video-resources.md) \| [Practice](01-complexity-analysis/worst-average-best-case/practice-problems.md) |
+| 44 | Recurrence Relations Formulation | [Open Topic](01-complexity-analysis/recurrence-relations/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/recurrence-relations/video-resources.md) \| [Practice](01-complexity-analysis/recurrence-relations/practice-problems.md) |
+| 45 | Recursion Tree Analysis Method | [Open Topic](01-complexity-analysis/recursion-tree-method/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/recursion-tree-method/video-resources.md) \| [Practice](01-complexity-analysis/recursion-tree-method/practice-problems.md) |
+| 46 | Master Theorem and Akra-Bazzi Method | [Open Topic](01-complexity-analysis/master-theorem/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/master-theorem/video-resources.md) \| [Practice](01-complexity-analysis/master-theorem/practice-problems.md) |
+| 47 | Substitution Method and Inductive Bounds | [Open Topic](01-complexity-analysis/substitution-method/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/substitution-method/video-resources.md) \| [Practice](01-complexity-analysis/substitution-method/practice-problems.md) |
+| 48 | Comparison Sorting Lower Bound Omega(N log N) | [Open Topic](01-complexity-analysis/sorting-complexity-bounds/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/sorting-complexity-bounds/video-resources.md) \| [Practice](01-complexity-analysis/sorting-complexity-bounds/practice-problems.md) |
+| 49 | Complexity of Graph Traversal and Shortest Paths | [Open Topic](01-complexity-analysis/graph-algorithm-complexity/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/graph-algorithm-complexity/video-resources.md) \| [Practice](01-complexity-analysis/graph-algorithm-complexity/practice-problems.md) |
+| 50 | Constraint-to-Complexity Mapping Guide | [Open Topic](01-complexity-analysis/constraint-to-complexity-mapping/README.md) | Beginner | Not Started | [Videos](01-complexity-analysis/constraint-to-complexity-mapping/video-resources.md) \| [Practice](01-complexity-analysis/constraint-to-complexity-mapping/practice-problems.md) |
+| 51 | Memory Limits, Page Faults and Cache Behavior | [Open Topic](01-complexity-analysis/memory-complexity-and-cache/README.md) | Intermediate | Not Started | [Videos](01-complexity-analysis/memory-complexity-and-cache/video-resources.md) \| [Practice](01-complexity-analysis/memory-complexity-and-cache/practice-problems.md) |
+| 52 | Constant Factor Acceleration and Pruning | [Open Topic](01-complexity-analysis/constant-factor-optimisation/README.md) | Advanced | Not Started | [Videos](01-complexity-analysis/constant-factor-optimisation/video-resources.md) \| [Practice](01-complexity-analysis/constant-factor-optimisation/practice-problems.md) |
 
-### [08. Graph Algorithms](08-graphs/)
-- Representations: Adjacency List, Adjacency Matrix, Edge List
-- Breadth-First Search (BFS), Depth-First Search (DFS), 0-1 BFS
-- Cycle Detection & Topological Sort (Kahn's Algorithm / DFS)
-- Disjoint Set Union (DSU) with Path Compression & Union-by-Rank
-- Minimum Spanning Trees (Kruskal's & Prim's)
-- Single-Source Shortest Paths: Dijkstra, Bellman-Ford, SPFA
-- All-Pairs Shortest Paths: Floyd-Warshall
-- Connectivity: Bridges, Articulation Points, Strongly Connected Components (Tarjan / Kosaraju)
+### 02. Basic Problem-Solving
 
-### [09. Dynamic Programming](09-dynamic-programming/)
-- Core Paradigms: Memoization (Top-down) vs. Tabulation (Bottom-up)
-- Classical Families: 0/1 Knapsack, Unbounded Knapsack, Subset Sum, LIS, LCS
-- Grid DP & Counting Paths
-- Interval DP
-- Tree DP & Rerooting DP
-- Bitmask DP & Submask Enumeration
-- Digit DP
-- Optimizations: Divide & Conquer, Convex Hull Trick (CHT), Knuth, SOS DP
+Master Domain Index: [`Open Domain Index`](02-basic-problem-solving/README.md)
 
-### [10. Advanced Data Structures](10-advanced-data-structures/)
-- Fenwick Tree (Binary Indexed Tree) - Point Update / Range Query
-- Segment Tree (Recursive and Iterative)
-- Segment Tree with Lazy Propagation
-- Sparse Table (Range Minimum Query in $O(1)$)
-- Treap (Cartesian Tree) & Implicit Treap
-- Persistent Segment Tree
-- Sqrt Decomposition & Mo's Algorithm
-- DSU on Tree (Sack)
-- Li Chao Tree
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 53 | Exhaustive Brute Force Search | [Open Topic](02-basic-problem-solving/brute-force-search/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/brute-force-search/video-resources.md) \| [Practice](02-basic-problem-solving/brute-force-search/practice-problems.md) |
+| 54 | Simulation and Implementation Accuracy | [Open Topic](02-basic-problem-solving/simulation-and-implementation/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/simulation-and-implementation/video-resources.md) \| [Practice](02-basic-problem-solving/simulation-and-implementation/practice-problems.md) |
+| 55 | Frequency Counting and Direct Addressing | [Open Topic](02-basic-problem-solving/frequency-counting/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/frequency-counting/video-resources.md) \| [Practice](02-basic-problem-solving/frequency-counting/practice-problems.md) |
+| 56 | Coordinate Compression to Dense Ranks | [Open Topic](02-basic-problem-solving/coordinate-compression/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/coordinate-compression/video-resources.md) \| [Practice](02-basic-problem-solving/coordinate-compression/practice-problems.md) |
+| 57 | Two Pointers (Opposite Direction Convergence) | [Open Topic](02-basic-problem-solving/two-pointers-opposite-direction/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/two-pointers-opposite-direction/video-resources.md) \| [Practice](02-basic-problem-solving/two-pointers-opposite-direction/practice-problems.md) |
+| 58 | Two Pointers (Same Direction Parallel Scan) | [Open Topic](02-basic-problem-solving/two-pointers-same-direction/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/two-pointers-same-direction/video-resources.md) \| [Practice](02-basic-problem-solving/two-pointers-same-direction/practice-problems.md) |
+| 59 | Fixed-Size Sliding Window Invariants | [Open Topic](02-basic-problem-solving/sliding-window-fixed/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/sliding-window-fixed/video-resources.md) \| [Practice](02-basic-problem-solving/sliding-window-fixed/practice-problems.md) |
+| 60 | Variable-Size Sliding Window Dynamics | [Open Topic](02-basic-problem-solving/sliding-window-variable/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/sliding-window-variable/video-resources.md) \| [Practice](02-basic-problem-solving/sliding-window-variable/practice-problems.md) |
+| 61 | Prefix Sums (1D & 2D Cumulative Arrays) | [Open Topic](02-basic-problem-solving/prefix-sums/README.md) | Beginner | **Completed** | [Videos](02-basic-problem-solving/prefix-sums/video-resources.md) \| [Practice](02-basic-problem-solving/prefix-sums/practice-problems.md) |
+| 62 | 2D Prefix Sums and Matrix Subgrid Sums | [Open Topic](02-basic-problem-solving/prefix-sums-2d/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/prefix-sums-2d/video-resources.md) \| [Practice](02-basic-problem-solving/prefix-sums-2d/practice-problems.md) |
+| 63 | Suffix Sums and Backward Accumulation | [Open Topic](02-basic-problem-solving/suffix-sums/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/suffix-sums/video-resources.md) \| [Practice](02-basic-problem-solving/suffix-sums/practice-problems.md) |
+| 64 | 1D Difference Arrays and Range Additions | [Open Topic](02-basic-problem-solving/difference-arrays/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/difference-arrays/video-resources.md) \| [Practice](02-basic-problem-solving/difference-arrays/practice-problems.md) |
+| 65 | 2D Difference Arrays and Grid Updates | [Open Topic](02-basic-problem-solving/difference-arrays-2d/README.md) | Intermediate | Not Started | [Videos](02-basic-problem-solving/difference-arrays-2d/video-resources.md) \| [Practice](02-basic-problem-solving/difference-arrays-2d/practice-problems.md) |
+| 66 | Greedy Algorithms and Local Optimality | [Open Topic](02-basic-problem-solving/greedy-algorithms/README.md) | Beginner | Not Started | [Videos](02-basic-problem-solving/greedy-algorithms/video-resources.md) \| [Practice](02-basic-problem-solving/greedy-algorithms/practice-problems.md) |
+| 67 | Exchange Arguments and Greedy Correctness Proofs | [Open Topic](02-basic-problem-solving/exchange-arguments/README.md) | Intermediate | Not Started | [Videos](02-basic-problem-solving/exchange-arguments/video-resources.md) \| [Practice](02-basic-problem-solving/exchange-arguments/practice-problems.md) |
+| 68 | Invariants and Monovariants in Problem Solving | [Open Topic](02-basic-problem-solving/invariants-and-monovariants/README.md) | Intermediate | Not Started | [Videos](02-basic-problem-solving/invariants-and-monovariants/video-resources.md) \| [Practice](02-basic-problem-solving/invariants-and-monovariants/practice-problems.md) |
+| 69 | Constructive Algorithms and Pattern Discovery | [Open Topic](02-basic-problem-solving/constructive-algorithms/README.md) | Intermediate | Not Started | [Videos](02-basic-problem-solving/constructive-algorithms/video-resources.md) \| [Practice](02-basic-problem-solving/constructive-algorithms/practice-problems.md) |
+| 70 | Offline vs. Online Query Processing Paradigms | [Open Topic](02-basic-problem-solving/offline-vs-online-processing/README.md) | Intermediate | Not Started | [Videos](02-basic-problem-solving/offline-vs-online-processing/video-resources.md) \| [Practice](02-basic-problem-solving/offline-vs-online-processing/practice-problems.md) |
 
-### [11. String Algorithms](11-string-algorithms/)
-- Polynomial Rolling Hashing & Double Hashing
-- Prefix Function & Knuth-Morris-Pratt (KMP)
-- Z-Algorithm
-- Manacher’s Algorithm (Palindromic Substrings in $O(N)$)
-- Trie Data Structure & Binary Tries
-- Aho-Corasick Automaton
-- Suffix Automaton
+### 03. Searching and Optimisation
 
-### [12. Number Theory](12-number-theory/)
-- Prime Sieve of Eratosthenes & Linear Sieve
-- Euclidean & Extended Euclidean Algorithm (Bézout's identity)
-- Modular Arithmetic, Modular Exponentiation, Modular Inverse
-- Euler’s Totient Function & Fermat’s Little Theorem
-- Chinese Remainder Theorem (CRT)
-- Linear Diophantine Equations
-- Möbius Inversion
+Master Domain Index: [`Open Domain Index`](03-searching-and-optimisation/README.md)
 
-### [13. Combinatorics](13-combinatorics/)
-- Factorials & Modular Inverse Combinatorics ($nCr \pmod p$)
-- Stars and Bars (Balls and Urns)
-- Principle of Inclusion-Exclusion (PIE)
-- Catalan Numbers & Derangements
-- Lucas' Theorem
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 71 | Linear Search and Sentinel Techniques | [Open Topic](03-searching-and-optimisation/linear-search/README.md) | Beginner | Not Started | [Videos](03-searching-and-optimisation/linear-search/video-resources.md) \| [Practice](03-searching-and-optimisation/linear-search/practice-problems.md) |
+| 72 | Discrete Binary Search and Boundary Invariants | [Open Topic](03-searching-and-optimisation/binary-search-discrete/README.md) | Beginner | Not Started | [Videos](03-searching-and-optimisation/binary-search-discrete/video-resources.md) \| [Practice](03-searching-and-optimisation/binary-search-discrete/practice-problems.md) |
+| 73 | Binary Search Partitions (Lower and Upper Bounds) | [Open Topic](03-searching-and-optimisation/lower-bound-and-upper-bound/README.md) | Beginner | Not Started | [Videos](03-searching-and-optimisation/lower-bound-and-upper-bound/video-resources.md) \| [Practice](03-searching-and-optimisation/lower-bound-and-upper-bound/practice-problems.md) |
+| 74 | Binary Search on Answer (Optimization to Decision) | [Open Topic](03-searching-and-optimisation/binary-search-on-answer/README.md) | Intermediate | **Completed** | [Videos](03-searching-and-optimisation/binary-search-on-answer/video-resources.md) \| [Practice](03-searching-and-optimisation/binary-search-on-answer/practice-problems.md) |
+| 75 | Monotonic Predicates and Feasibility Checks | [Open Topic](03-searching-and-optimisation/monotonic-predicates/README.md) | Intermediate | Not Started | [Videos](03-searching-and-optimisation/monotonic-predicates/video-resources.md) \| [Practice](03-searching-and-optimisation/monotonic-predicates/practice-problems.md) |
+| 76 | First True / Last False Boundary Resolution | [Open Topic](03-searching-and-optimisation/first-true-last-false/README.md) | Beginner | Not Started | [Videos](03-searching-and-optimisation/first-true-last-false/video-resources.md) \| [Practice](03-searching-and-optimisation/first-true-last-false/practice-problems.md) |
+| 77 | Binary Search in Rotated Sorted Arrays | [Open Topic](03-searching-and-optimisation/search-in-rotated-arrays/README.md) | Intermediate | Not Started | [Videos](03-searching-and-optimisation/search-in-rotated-arrays/video-resources.md) \| [Practice](03-searching-and-optimisation/search-in-rotated-arrays/practice-problems.md) |
+| 78 | Ternary Search on Unimodal Functions | [Open Topic](03-searching-and-optimisation/ternary-search/README.md) | Intermediate | Not Started | [Videos](03-searching-and-optimisation/ternary-search/video-resources.md) \| [Practice](03-searching-and-optimisation/ternary-search/practice-problems.md) |
+| 79 | Parallel Binary Search across Batch Queries | [Open Topic](03-searching-and-optimisation/parallel-binary-search/README.md) | Advanced | Not Started | [Videos](03-searching-and-optimisation/parallel-binary-search/video-resources.md) \| [Practice](03-searching-and-optimisation/parallel-binary-search/practice-problems.md) |
+| 80 | Fractional Cascading for Accelerated Range Lookups | [Open Topic](03-searching-and-optimisation/fractional-cascading/README.md) | Expert | Not Started | [Videos](03-searching-and-optimisation/fractional-cascading/video-resources.md) \| [Practice](03-searching-and-optimisation/fractional-cascading/practice-problems.md) |
+| 81 | Meet-in-the-Middle Search Space Splitting | [Open Topic](03-searching-and-optimisation/meet-in-the-middle/README.md) | Intermediate | Not Started | [Videos](03-searching-and-optimisation/meet-in-the-middle/video-resources.md) \| [Practice](03-searching-and-optimisation/meet-in-the-middle/practice-problems.md) |
 
-### [14. Bit Manipulation](14-bit-manipulation/)
-- Bitwise Operators & Algebraic Properties
-- Builtin Compiler Intrinsic Functions (`__builtin_clz`, `__builtin_popcount`)
-- Iterating through all submasks of a mask in $O(3^N)$
-- Sum Over Subsets (SOS) DP
+### 04. Recursion and Backtracking
 
-### [15. Probability and Statistics](15-probability-and-statistics/)
-- Discrete Probability, Conditional Probability, Bayes' Theorem
-- Linearity of Expectation
-- Markov Chains and Expected Steps to Absorption
-- Probabilistic Dynamic Programming
+Master Domain Index: [`Open Domain Index`](04-recursion-and-backtracking/README.md)
 
-### [16. Game Theory](16-game-theory/)
-- Combinatorial Games, Normal Play Convention
-- Impartial Games & Game Graphs
-- Game of Nim & Bouton's Theorem
-- Sprague-Grundy Function & Mex Rule
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 82 | Recursion Fundamentals and Inductive Base Cases | [Open Topic](04-recursion-and-backtracking/recursion-fundamentals/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/recursion-fundamentals/video-resources.md) \| [Practice](04-recursion-and-backtracking/recursion-fundamentals/practice-problems.md) |
+| 83 | Recursion Trees and Execution Tracing | [Open Topic](04-recursion-and-backtracking/recursion-trees/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/recursion-trees/video-resources.md) \| [Practice](04-recursion-and-backtracking/recursion-trees/practice-problems.md) |
+| 84 | Tail Recursion and Compiler Optimization | [Open Topic](04-recursion-and-backtracking/tail-recursion/README.md) | Intermediate | Not Started | [Videos](04-recursion-and-backtracking/tail-recursion/video-resources.md) \| [Practice](04-recursion-and-backtracking/tail-recursion/practice-problems.md) |
+| 85 | Backtracking Framework and State Restoration | [Open Topic](04-recursion-and-backtracking/backtracking-framework/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/backtracking-framework/video-resources.md) \| [Practice](04-recursion-and-backtracking/backtracking-framework/practice-problems.md) |
+| 86 | Subset Generation (2^N State Space) | [Open Topic](04-recursion-and-backtracking/subset-generation/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/subset-generation/video-resources.md) \| [Practice](04-recursion-and-backtracking/subset-generation/practice-problems.md) |
+| 87 | Permutation Generation (N! State Space) | [Open Topic](04-recursion-and-backtracking/permutation-generation/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/permutation-generation/video-resources.md) \| [Practice](04-recursion-and-backtracking/permutation-generation/practice-problems.md) |
+| 88 | Combination Generation (N choose K) | [Open Topic](04-recursion-and-backtracking/combination-generation/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/combination-generation/video-resources.md) \| [Practice](04-recursion-and-backtracking/combination-generation/practice-problems.md) |
+| 89 | Subsequence Generation and Lexicographic Orders | [Open Topic](04-recursion-and-backtracking/subsequence-generation/README.md) | Beginner | Not Started | [Videos](04-recursion-and-backtracking/subsequence-generation/video-resources.md) \| [Practice](04-recursion-and-backtracking/subsequence-generation/practice-problems.md) |
+| 90 | The N-Queens Problem and Diagonal Bitmasks | [Open Topic](04-recursion-and-backtracking/n-queens-problem/README.md) | Intermediate | Not Started | [Videos](04-recursion-and-backtracking/n-queens-problem/video-resources.md) \| [Practice](04-recursion-and-backtracking/n-queens-problem/practice-problems.md) |
+| 91 | Sudoku Solving and Constraint Propagation | [Open Topic](04-recursion-and-backtracking/sudoku-solver/README.md) | Intermediate | Not Started | [Videos](04-recursion-and-backtracking/sudoku-solver/video-resources.md) \| [Practice](04-recursion-and-backtracking/sudoku-solver/practice-problems.md) |
+| 92 | Search Pruning and Bound Estimation | [Open Topic](04-recursion-and-backtracking/pruning-and-bounding/README.md) | Intermediate | Not Started | [Videos](04-recursion-and-backtracking/pruning-and-bounding/video-resources.md) \| [Practice](04-recursion-and-backtracking/pruning-and-bounding/practice-problems.md) |
+| 93 | Branch-and-Bound State Space Traversal | [Open Topic](04-recursion-and-backtracking/branch-and-bound/README.md) | Advanced | Not Started | [Videos](04-recursion-and-backtracking/branch-and-bound/video-resources.md) \| [Practice](04-recursion-and-backtracking/branch-and-bound/practice-problems.md) |
+| 94 | Bidirectional Search and Search Graph Meets | [Open Topic](04-recursion-and-backtracking/meet-in-the-middle-search/README.md) | Intermediate | Not Started | [Videos](04-recursion-and-backtracking/meet-in-the-middle-search/video-resources.md) \| [Practice](04-recursion-and-backtracking/meet-in-the-middle-search/practice-problems.md) |
 
-### [17. Computational Geometry](17-computational-geometry/)
-- 2D Point & Vector Class with Cross and Dot Products
-- Point Orientation (Clockwise / Counter-Clockwise / Collinear)
-- Line and Segment Intersection
-- Polygon Area (Shoelace Formula)
-- Convex Hull: Monotone Chain / Graham Scan
-- Sweep-Line Algorithms
+### 05. Sorting Algorithms
 
-### [18. Advanced Graph Theory](18-advanced-graph-theory/)
-- Maximum Flow: Edmonds-Karp & Dinic's Algorithm
-- Max-Flow Min-Cut Theorem
-- Bipartite Matching: Hopcroft-Karp Algorithm
-- Min-Cost Max-Flow (MCMF)
-- 2-Satisfiability (2-SAT) via SCC
+Master Domain Index: [`Open Domain Index`](05-sorting/README.md)
 
-### [19. Advanced Algorithmic Techniques](19-advanced-algorithmic-techniques/)
-- Divide and Conquer Optimization
-- Meet-in-the-Middle on Exponential Spaces
-- Offline Query Processing
-- Parallel Binary Search
-- Small-to-Large Merging (DSU on Tree)
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 95 | Bubble Sort and Inversion Counting | [Open Topic](05-sorting/bubble-sort/README.md) | Beginner | Not Started | [Videos](05-sorting/bubble-sort/video-resources.md) \| [Practice](05-sorting/bubble-sort/practice-problems.md) |
+| 96 | Selection Sort and Minimum Swaps | [Open Topic](05-sorting/selection-sort/README.md) | Beginner | Not Started | [Videos](05-sorting/selection-sort/video-resources.md) \| [Practice](05-sorting/selection-sort/practice-problems.md) |
+| 97 | Insertion Sort and Adaptive Online Sorting | [Open Topic](05-sorting/insertion-sort/README.md) | Beginner | Not Started | [Videos](05-sorting/insertion-sort/video-resources.md) \| [Practice](05-sorting/insertion-sort/practice-problems.md) |
+| 98 | Merge Sort and O(N log N) Inversion Counting | [Open Topic](05-sorting/merge-sort/README.md) | Intermediate | Not Started | [Videos](05-sorting/merge-sort/video-resources.md) \| [Practice](05-sorting/merge-sort/practice-problems.md) |
+| 99 | Quick Sort, Lomuto/Hoare and 3-Way Partitioning | [Open Topic](05-sorting/quick-sort-and-partitioning/README.md) | Intermediate | Not Started | [Videos](05-sorting/quick-sort-and-partitioning/video-resources.md) \| [Practice](05-sorting/quick-sort-and-partitioning/practice-problems.md) |
+| 100 | Heap Sort and In-Place Array Sorting | [Open Topic](05-sorting/heap-sort/README.md) | Intermediate | Not Started | [Videos](05-sorting/heap-sort/video-resources.md) \| [Practice](05-sorting/heap-sort/practice-problems.md) |
+| 101 | Counting Sort (Linear Non-Comparison Sorting) | [Open Topic](05-sorting/counting-sort/README.md) | Beginner | Not Started | [Videos](05-sorting/counting-sort/video-resources.md) \| [Practice](05-sorting/counting-sort/practice-problems.md) |
+| 102 | Radix Sort (LSD and MSD String/Integer Sorting) | [Open Topic](05-sorting/radix-sort/README.md) | Intermediate | Not Started | [Videos](05-sorting/radix-sort/video-resources.md) \| [Practice](05-sorting/radix-sort/practice-problems.md) |
+| 103 | Bucket Sort and Uniform Distribution Partitioning | [Open Topic](05-sorting/bucket-sort/README.md) | Intermediate | Not Started | [Videos](05-sorting/bucket-sort/video-resources.md) \| [Practice](05-sorting/bucket-sort/practice-problems.md) |
+| 104 | Shell Sort and Diminishing Increments | [Open Topic](05-sorting/shell-sort/README.md) | Intermediate | Not Started | [Videos](05-sorting/shell-sort/video-resources.md) \| [Practice](05-sorting/shell-sort/practice-problems.md) |
+| 105 | Stability in Sorting Algorithms and Index Ties | [Open Topic](05-sorting/stability-in-sorting/README.md) | Beginner | Not Started | [Videos](05-sorting/stability-in-sorting/video-resources.md) \| [Practice](05-sorting/stability-in-sorting/practice-problems.md) |
+| 106 | In-Place Sorting and O(1) Memory Constraints | [Open Topic](05-sorting/in-place-sorting/README.md) | Intermediate | Not Started | [Videos](05-sorting/in-place-sorting/video-resources.md) \| [Practice](05-sorting/in-place-sorting/practice-problems.md) |
+| 107 | Custom Sorting and Multi-Field Sorting | [Open Topic](05-sorting/custom-sorting-comparators/README.md) | Beginner | Not Started | [Videos](05-sorting/custom-sorting-comparators/video-resources.md) \| [Practice](05-sorting/custom-sorting-comparators/practice-problems.md) |
+| 108 | Strict Weak Ordering and Comparator Invariants | [Open Topic](05-sorting/comparator-design-rules/README.md) | Intermediate | Not Started | [Videos](05-sorting/comparator-design-rules/video-resources.md) \| [Practice](05-sorting/comparator-design-rules/practice-problems.md) |
+| 109 | Decision Trees and Omega(N log N) Information Bound | [Open Topic](05-sorting/sorting-lower-bounds/README.md) | Intermediate | Not Started | [Videos](05-sorting/sorting-lower-bounds/video-resources.md) \| [Practice](05-sorting/sorting-lower-bounds/practice-problems.md) |
 
-### [20. Advanced Mathematics](20-advanced-mathematics/)
-- Matrix Exponentiation for Linear Recurrences
-- Gaussian Elimination (over $\mathbb{R}$ and $\mathbb{F}_2$)
-- Fast Fourier Transform (FFT) & Number Theoretic Transform (NTT)
+### 06. Basic Data Structures
 
-### [21. Contest Engineering](21-contest-engineering/)
-- Stress Testing Harness (Bash/Python differential test runners)
-- Random Test Generators (Trees, Graphs, Arrays, Corner Cases)
-- Integer Overflow Prevention (`int64_t`, `__int128_t`)
-- Memory and Recursion Stack Overflow Engineering
+Master Domain Index: [`Open Domain Index`](06-basic-data-structures/README.md)
 
-### [22. Quant and HFT Specialisation](22-quant-hft-specialisation/)
-- Algorithmic Trading vs. Systems Engineering Clarity
-- Cache Locality, Memory Layout, Structure-of-Arrays vs Array-of-Structures
-- Low-latency Queue & Ring Buffer Mechanics
-- Fast Order Book Mechanics & Order Statistic Trees
-- Branch Prediction & Instruction-Level Parallelism considerations
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 110 | Static vs. Dynamic Arrays and Capacity Doubling | [Open Topic](06-basic-data-structures/static-and-dynamic-arrays/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/static-and-dynamic-arrays/video-resources.md) \| [Practice](06-basic-data-structures/static-and-dynamic-arrays/practice-problems.md) |
+| 111 | Singly Linked Lists and Pointer Traversal | [Open Topic](06-basic-data-structures/singly-linked-lists/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/singly-linked-lists/video-resources.md) \| [Practice](06-basic-data-structures/singly-linked-lists/practice-problems.md) |
+| 112 | Doubly Linked Lists and O(1) Splice/Removal | [Open Topic](06-basic-data-structures/doubly-linked-lists/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/doubly-linked-lists/video-resources.md) \| [Practice](06-basic-data-structures/doubly-linked-lists/practice-problems.md) |
+| 113 | Circular Linked Lists and Josephus Simulation | [Open Topic](06-basic-data-structures/circular-linked-lists/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/circular-linked-lists/video-resources.md) \| [Practice](06-basic-data-structures/circular-linked-lists/practice-problems.md) |
+| 114 | Stack Data Structure and LIFO Applications | [Open Topic](06-basic-data-structures/stack-data-structure/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/stack-data-structure/video-resources.md) \| [Practice](06-basic-data-structures/stack-data-structure/practice-problems.md) |
+| 115 | Queue Data Structure and FIFO Applications | [Open Topic](06-basic-data-structures/queue-data-structure/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/queue-data-structure/video-resources.md) \| [Practice](06-basic-data-structures/queue-data-structure/practice-problems.md) |
+| 116 | Circular Queues and Fixed Ring Buffers | [Open Topic](06-basic-data-structures/circular-queue-and-buffers/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/circular-queue-and-buffers/video-resources.md) \| [Practice](06-basic-data-structures/circular-queue-and-buffers/practice-problems.md) |
+| 117 | Double-Ended Queue (Deque) Architecture | [Open Topic](06-basic-data-structures/deque-data-structure/README.md) | Beginner | Not Started | [Videos](06-basic-data-structures/deque-data-structure/video-resources.md) \| [Practice](06-basic-data-structures/deque-data-structure/practice-problems.md) |
+| 118 | Binary Heap (Min-Heap and Max-Heap Operations) | [Open Topic](06-basic-data-structures/binary-heap/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/binary-heap/video-resources.md) \| [Practice](06-basic-data-structures/binary-heap/practice-problems.md) |
+| 119 | Priority Queue Mechanics and Percolate Routines | [Open Topic](06-basic-data-structures/priority-queue-mechanics/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/priority-queue-mechanics/video-resources.md) \| [Practice](06-basic-data-structures/priority-queue-mechanics/practice-problems.md) |
+| 120 | Hash Tables (Open Addressing vs. Chaining) | [Open Topic](06-basic-data-structures/hash-tables/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/hash-tables/video-resources.md) \| [Practice](06-basic-data-structures/hash-tables/practice-problems.md) |
+| 121 | Hash Collisions, Robin Hood and Cuckoo Hashing | [Open Topic](06-basic-data-structures/hash-collision-handling/README.md) | Advanced | Not Started | [Videos](06-basic-data-structures/hash-collision-handling/video-resources.md) \| [Practice](06-basic-data-structures/hash-collision-handling/practice-problems.md) |
+| 122 | Monotonic Stack (Next Greater/Smaller Element) | [Open Topic](06-basic-data-structures/monotonic-stack/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/monotonic-stack/video-resources.md) \| [Practice](06-basic-data-structures/monotonic-stack/practice-problems.md) |
+| 123 | Monotonic Queue (Sliding Window Optimum) | [Open Topic](06-basic-data-structures/monotonic-queue/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/monotonic-queue/video-resources.md) \| [Practice](06-basic-data-structures/monotonic-queue/practice-problems.md) |
+| 124 | Ordered Sets and Self-Balancing Trees | [Open Topic](06-basic-data-structures/ordered-sets-and-maps/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/ordered-sets-and-maps/video-resources.md) \| [Practice](06-basic-data-structures/ordered-sets-and-maps/practice-problems.md) |
+| 125 | Sparse Table for Static O(1) Range Queries | [Open Topic](06-basic-data-structures/sparse-table-rmq/README.md) | Intermediate | Not Started | [Videos](06-basic-data-structures/sparse-table-rmq/video-resources.md) \| [Practice](06-basic-data-structures/sparse-table-rmq/practice-problems.md) |
 
----
+### 07. Trees
 
-## Standard Topic Structure (11-File Layout)
+Master Domain Index: [`Open Domain Index`](07-trees/README.md)
 
-Every subtopic is organized into a modular folder following an identical 11-file layout:
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 126 | Tree Terminology, Axioms and Connectivity | [Open Topic](07-trees/tree-terminology-and-properties/README.md) | Beginner | Not Started | [Videos](07-trees/tree-terminology-and-properties/video-resources.md) \| [Practice](07-trees/tree-terminology-and-properties/practice-problems.md) |
+| 127 | Tree Representation (Adjacency Lists and Edge Sets) | [Open Topic](07-trees/tree-representation/README.md) | Beginner | Not Started | [Videos](07-trees/tree-representation/video-resources.md) \| [Practice](07-trees/tree-representation/practice-problems.md) |
+| 128 | Rooted Trees and Parent-Child Orientations | [Open Topic](07-trees/rooted-trees/README.md) | Beginner | Not Started | [Videos](07-trees/rooted-trees/video-resources.md) \| [Practice](07-trees/rooted-trees/practice-problems.md) |
+| 129 | Binary Trees (Preorder, Inorder, Postorder) | [Open Topic](07-trees/binary-trees-and-traversals/README.md) | Beginner | Not Started | [Videos](07-trees/binary-trees-and-traversals/video-resources.md) \| [Practice](07-trees/binary-trees-and-traversals/practice-problems.md) |
+| 130 | Binary Search Trees (BST Properties and Invariants) | [Open Topic](07-trees/binary-search-trees/README.md) | Beginner | Not Started | [Videos](07-trees/binary-search-trees/video-resources.md) \| [Practice](07-trees/binary-search-trees/practice-problems.md) |
+| 131 | Tree DFS and Subtree Exploration | [Open Topic](07-trees/tree-dfs/README.md) | Beginner | Not Started | [Videos](07-trees/tree-dfs/video-resources.md) \| [Practice](07-trees/tree-dfs/practice-problems.md) |
+| 132 | Tree BFS and Shortest Path in Unweighted Trees | [Open Topic](07-trees/tree-bfs/README.md) | Beginner | Not Started | [Videos](07-trees/tree-bfs/video-resources.md) \| [Practice](07-trees/tree-bfs/practice-problems.md) |
+| 133 | Parent, Depth and Subtree Size Tracking | [Open Topic](07-trees/parent-depth-subtree-arrays/README.md) | Beginner | Not Started | [Videos](07-trees/parent-depth-subtree-arrays/video-resources.md) \| [Practice](07-trees/parent-depth-subtree-arrays/practice-problems.md) |
+| 134 | Tree Diameter (Two-DFS Method and DP Formulation) | [Open Topic](07-trees/tree-diameter/README.md) | Intermediate | Not Started | [Videos](07-trees/tree-diameter/video-resources.md) \| [Practice](07-trees/tree-diameter/practice-problems.md) |
+| 135 | Tree Centres and Centroid Identification | [Open Topic](07-trees/tree-centres-and-centroids/README.md) | Intermediate | Not Started | [Videos](07-trees/tree-centres-and-centroids/video-resources.md) \| [Practice](07-trees/tree-centres-and-centroids/practice-problems.md) |
+| 136 | Lowest Common Ancestor (LCA) Problem | [Open Topic](07-trees/lowest-common-ancestor/README.md) | Intermediate | Not Started | [Videos](07-trees/lowest-common-ancestor/video-resources.md) \| [Practice](07-trees/lowest-common-ancestor/practice-problems.md) |
+| 137 | Binary Lifting for O(log N) LCA and Path Queries | [Open Topic](07-trees/binary-lifting/README.md) | Intermediate | Not Started | [Videos](07-trees/binary-lifting/video-resources.md) \| [Practice](07-trees/binary-lifting/practice-problems.md) |
+| 138 | Euler Tour Technique (Flattening Trees into Arrays) | [Open Topic](07-trees/euler-tour-technique/README.md) | Intermediate | Not Started | [Videos](07-trees/euler-tour-technique/video-resources.md) \| [Practice](07-trees/euler-tour-technique/practice-problems.md) |
+| 139 | Entry and Exit Times (Ancestor Checking in O(1)) | [Open Topic](07-trees/entry-and-exit-times/README.md) | Intermediate | Not Started | [Videos](07-trees/entry-and-exit-times/video-resources.md) \| [Practice](07-trees/entry-and-exit-times/practice-problems.md) |
+| 140 | Tree DP (Subtree State Aggregation) | [Open Topic](07-trees/tree-dynamic-programming/README.md) | Intermediate | Not Started | [Videos](07-trees/tree-dynamic-programming/video-resources.md) \| [Practice](07-trees/tree-dynamic-programming/practice-problems.md) |
+| 141 | Rerooting DP (All-Roots Optimization in O(N)) | [Open Topic](07-trees/rerooting-dp/README.md) | Advanced | Not Started | [Videos](07-trees/rerooting-dp/video-resources.md) \| [Practice](07-trees/rerooting-dp/practice-problems.md) |
+| 142 | Heavy-Light Decomposition (HLD) on Paths | [Open Topic](07-trees/heavy-light-decomposition/README.md) | Advanced | Not Started | [Videos](07-trees/heavy-light-decomposition/video-resources.md) \| [Practice](07-trees/heavy-light-decomposition/practice-problems.md) |
+| 143 | Centroid Decomposition (Divide-and-Conquer on Trees) | [Open Topic](07-trees/centroid-decomposition/README.md) | Expert | Not Started | [Videos](07-trees/centroid-decomposition/video-resources.md) \| [Practice](07-trees/centroid-decomposition/practice-problems.md) |
+| 144 | Virtual Trees (Auxiliary Trees for Marked Nodes) | [Open Topic](07-trees/virtual-trees/README.md) | Expert | Not Started | [Videos](07-trees/virtual-trees/video-resources.md) \| [Practice](07-trees/virtual-trees/practice-problems.md) |
+| 145 | Tree Isomorphism and AHU Hashing Algorithm | [Open Topic](07-trees/tree-isomorphism/README.md) | Advanced | Not Started | [Videos](07-trees/tree-isomorphism/video-resources.md) \| [Practice](07-trees/tree-isomorphism/practice-problems.md) |
+| 146 | Prufer Sequences and Cayley's Tree Formula | [Open Topic](07-trees/prufer-sequences/README.md) | Advanced | Not Started | [Videos](07-trees/prufer-sequences/video-resources.md) \| [Practice](07-trees/prufer-sequences/practice-problems.md) |
+| 147 | Link-Cut Trees (Dynamic Forest Connectivity) | [Open Topic](07-trees/link-cut-tree-introduction/README.md) | Master | Not Started | [Videos](07-trees/link-cut-tree-introduction/video-resources.md) \| [Practice](07-trees/link-cut-tree-introduction/practice-problems.md) |
+| 148 | Euler Tour Trees for Dynamic Trees | [Open Topic](07-trees/euler-tour-trees/README.md) | Master | Not Started | [Videos](07-trees/euler-tour-trees/video-resources.md) \| [Practice](07-trees/euler-tour-trees/practice-problems.md) |
 
-```text
-topic-folder/
-├── README.md               # Complete 24-section reference guide
-├── theory.md               # Formal mathematical theory, invariants, proofs
-├── implementation.cpp      # Standalone C++20 verified implementation
-├── dry-run.md              # Detailed manual state trace on concrete input
-├── visual-explanation.md   # ASCII / Mermaid state diagrams
-├── video-resources.md      # Verified video lectures & timestamps
-├── github-resources.md     # Reference GitHub repositories & source files
-├── web-resources.md        # High-quality tutorials, articles, visualizations
-├── practice-problems.md    # Beginner, Intermediate, and Advanced problems
-├── advanced-variations.md  # Generalizations, multidimensional variants
-└── notes.md                # Personal reflections, pitfalls, and revision log
-```
+### 08. Graph Algorithms
+
+Master Domain Index: [`Open Domain Index`](08-graphs/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 149 | Graph Terminology, Types and Degrees | [Open Topic](08-graphs/graph-terminology-and-types/README.md) | Beginner | Not Started | [Videos](08-graphs/graph-terminology-and-types/video-resources.md) \| [Practice](08-graphs/graph-terminology-and-types/practice-problems.md) |
+| 150 | Graph Representations (Matrix, List, Edge Array) | [Open Topic](08-graphs/graph-representations/README.md) | Beginner | Not Started | [Videos](08-graphs/graph-representations/video-resources.md) \| [Practice](08-graphs/graph-representations/practice-problems.md) |
+| 151 | Depth-First Search (DFS) and Recursion State | [Open Topic](08-graphs/depth-first-search/README.md) | Beginner | Not Started | [Videos](08-graphs/depth-first-search/video-resources.md) \| [Practice](08-graphs/depth-first-search/practice-problems.md) |
+| 152 | Breadth-First Search (BFS) and Layered Traversal | [Open Topic](08-graphs/breadth-first-search/README.md) | Beginner | Not Started | [Videos](08-graphs/breadth-first-search/video-resources.md) \| [Practice](08-graphs/breadth-first-search/practice-problems.md) |
+| 153 | Multi-Source BFS and Simultaneous Wavefronts | [Open Topic](08-graphs/multi-source-bfs/README.md) | Beginner | Not Started | [Videos](08-graphs/multi-source-bfs/video-resources.md) \| [Practice](08-graphs/multi-source-bfs/practice-problems.md) |
+| 154 | 0-1 BFS with Deques in O(V + E) Linear Time | [Open Topic](08-graphs/0-1-bfs/README.md) | Intermediate | Not Started | [Videos](08-graphs/0-1-bfs/video-resources.md) \| [Practice](08-graphs/0-1-bfs/practice-problems.md) |
+| 155 | Connected Components in Undirected Graphs | [Open Topic](08-graphs/connected-components/README.md) | Beginner | Not Started | [Videos](08-graphs/connected-components/video-resources.md) \| [Practice](08-graphs/connected-components/practice-problems.md) |
+| 156 | Cycle Detection (Directed vs. Undirected Graphs) | [Open Topic](08-graphs/cycle-detection/README.md) | Beginner | Not Started | [Videos](08-graphs/cycle-detection/video-resources.md) \| [Practice](08-graphs/cycle-detection/practice-problems.md) |
+| 157 | Bipartite Graph Checking (2-Coloring via BFS/DFS) | [Open Topic](08-graphs/bipartite-checking/README.md) | Beginner | Not Started | [Videos](08-graphs/bipartite-checking/video-resources.md) \| [Practice](08-graphs/bipartite-checking/practice-problems.md) |
+| 158 | Topological Sorting of Directed Acyclic Graphs | [Open Topic](08-graphs/topological-sorting/README.md) | Intermediate | Not Started | [Videos](08-graphs/topological-sorting/video-resources.md) \| [Practice](08-graphs/topological-sorting/practice-problems.md) |
+| 159 | Kahn's Algorithm (In-Degree BFS Topological Sort) | [Open Topic](08-graphs/kahns-algorithm/README.md) | Intermediate | Not Started | [Videos](08-graphs/kahns-algorithm/video-resources.md) \| [Practice](08-graphs/kahns-algorithm/practice-problems.md) |
+| 160 | Strongly Connected Components (SCC Fundamentals) | [Open Topic](08-graphs/strongly-connected-components/README.md) | Intermediate | Not Started | [Videos](08-graphs/strongly-connected-components/video-resources.md) \| [Practice](08-graphs/strongly-connected-components/practice-problems.md) |
+| 161 | Kosaraju's Two-Pass SCC Algorithm | [Open Topic](08-graphs/kosarajus-algorithm/README.md) | Intermediate | Not Started | [Videos](08-graphs/kosarajus-algorithm/video-resources.md) \| [Practice](08-graphs/kosarajus-algorithm/practice-problems.md) |
+| 162 | Tarjan's Low-Link SCC Algorithm | [Open Topic](08-graphs/tarjans-scc-algorithm/README.md) | Advanced | Not Started | [Videos](08-graphs/tarjans-scc-algorithm/video-resources.md) \| [Practice](08-graphs/tarjans-scc-algorithm/practice-problems.md) |
+| 163 | Bridges and Cut-Edge Identification | [Open Topic](08-graphs/bridges-and-cut-edges/README.md) | Intermediate | Not Started | [Videos](08-graphs/bridges-and-cut-edges/video-resources.md) \| [Practice](08-graphs/bridges-and-cut-edges/practice-problems.md) |
+| 164 | Articulation Points (Cut Vertices) | [Open Topic](08-graphs/articulation-points/README.md) | Intermediate | Not Started | [Videos](08-graphs/articulation-points/video-resources.md) \| [Practice](08-graphs/articulation-points/practice-problems.md) |
+| 165 | Biconnected Components and Block-Cut Trees | [Open Topic](08-graphs/biconnected-components/README.md) | Advanced | Not Started | [Videos](08-graphs/biconnected-components/video-resources.md) \| [Practice](08-graphs/biconnected-components/practice-problems.md) |
+| 166 | Dijkstra's Single-Source Shortest Paths | [Open Topic](08-graphs/dijkstra/README.md) | Intermediate | **Completed** | [Videos](08-graphs/dijkstra/video-resources.md) \| [Practice](08-graphs/dijkstra/practice-problems.md) |
+| 167 | Bellman-Ford Algorithm and Negative Cycles | [Open Topic](08-graphs/bellman-ford/README.md) | Intermediate | Not Started | [Videos](08-graphs/bellman-ford/video-resources.md) \| [Practice](08-graphs/bellman-ford/practice-problems.md) |
+| 168 | Floyd-Warshall All-Pairs Shortest Paths O(V^3) | [Open Topic](08-graphs/floyd-warshall/README.md) | Intermediate | Not Started | [Videos](08-graphs/floyd-warshall/video-resources.md) \| [Practice](08-graphs/floyd-warshall/practice-problems.md) |
+| 169 | Shortest and Longest Paths on DAGs in O(V + E) | [Open Topic](08-graphs/dag-shortest-paths/README.md) | Intermediate | Not Started | [Videos](08-graphs/dag-shortest-paths/video-resources.md) \| [Practice](08-graphs/dag-shortest-paths/practice-problems.md) |
+| 170 | Minimum Spanning Tree (MST Properties and Cuts) | [Open Topic](08-graphs/minimum-spanning-tree/README.md) | Intermediate | Not Started | [Videos](08-graphs/minimum-spanning-tree/video-resources.md) \| [Practice](08-graphs/minimum-spanning-tree/practice-problems.md) |
+| 171 | Kruskal's Algorithm using DSU | [Open Topic](08-graphs/kruskals-algorithm/README.md) | Intermediate | Not Started | [Videos](08-graphs/kruskals-algorithm/video-resources.md) \| [Practice](08-graphs/kruskals-algorithm/practice-problems.md) |
+| 172 | Prim's Algorithm using Priority Queues | [Open Topic](08-graphs/prims-algorithm/README.md) | Intermediate | Not Started | [Videos](08-graphs/prims-algorithm/video-resources.md) \| [Practice](08-graphs/prims-algorithm/practice-problems.md) |
+| 173 | Disjoint Set Union (DSU / Union-Find) | [Open Topic](08-graphs/disjoint-set-union/README.md) | Intermediate | **Completed** | [Videos](08-graphs/disjoint-set-union/video-resources.md) \| [Practice](08-graphs/disjoint-set-union/practice-problems.md) |
+| 174 | Eulerian Paths and Circuits (Hierholzer Algorithm) | [Open Topic](08-graphs/eulerian-paths-and-circuits/README.md) | Intermediate | Not Started | [Videos](08-graphs/eulerian-paths-and-circuits/video-resources.md) \| [Practice](08-graphs/eulerian-paths-and-circuits/practice-problems.md) |
+| 175 | Hamiltonian Paths and NP-Completeness Reductions | [Open Topic](08-graphs/hamiltonian-paths/README.md) | Advanced | Not Started | [Videos](08-graphs/hamiltonian-paths/video-resources.md) \| [Practice](08-graphs/hamiltonian-paths/practice-problems.md) |
+| 176 | Maximum Flow and Residual Graph Networks | [Open Topic](08-graphs/maximum-flow-fundamentals/README.md) | Advanced | Not Started | [Videos](08-graphs/maximum-flow-fundamentals/video-resources.md) \| [Practice](08-graphs/maximum-flow-fundamentals/practice-problems.md) |
+| 177 | Max-Flow Min-Cut Theorem and Cut Extraction | [Open Topic](08-graphs/minimum-cut-theorem/README.md) | Advanced | Not Started | [Videos](08-graphs/minimum-cut-theorem/video-resources.md) \| [Practice](08-graphs/minimum-cut-theorem/practice-problems.md) |
+| 178 | Ford-Fulkerson Augmenting Path Method | [Open Topic](08-graphs/ford-fulkerson-method/README.md) | Advanced | Not Started | [Videos](08-graphs/ford-fulkerson-method/video-resources.md) \| [Practice](08-graphs/ford-fulkerson-method/practice-problems.md) |
+| 179 | Edmonds-Karp Shortest Augmenting Path O(V E^2) | [Open Topic](08-graphs/edmonds-karp-algorithm/README.md) | Advanced | Not Started | [Videos](08-graphs/edmonds-karp-algorithm/video-resources.md) \| [Practice](08-graphs/edmonds-karp-algorithm/practice-problems.md) |
+| 180 | Dinic's Blocking Flow Algorithm O(V^2 E) | [Open Topic](08-graphs/dinics-algorithm/README.md) | Advanced | Not Started | [Videos](08-graphs/dinics-algorithm/video-resources.md) \| [Practice](08-graphs/dinics-algorithm/practice-problems.md) |
+| 181 | Min-Cost Max-Flow (MCMF and SPFA Potentials) | [Open Topic](08-graphs/min-cost-max-flow/README.md) | Expert | Not Started | [Videos](08-graphs/min-cost-max-flow/video-resources.md) \| [Practice](08-graphs/min-cost-max-flow/practice-problems.md) |
+| 182 | Maximum Bipartite Matching and Konig's Theorem | [Open Topic](08-graphs/bipartite-matching-basics/README.md) | Intermediate | Not Started | [Videos](08-graphs/bipartite-matching-basics/video-resources.md) \| [Practice](08-graphs/bipartite-matching-basics/practice-problems.md) |
+| 183 | Hopcroft-Karp Algorithm O(E sqrt(V)) | [Open Topic](08-graphs/hopcroft-karp-algorithm/README.md) | Advanced | Not Started | [Videos](08-graphs/hopcroft-karp-algorithm/video-resources.md) \| [Practice](08-graphs/hopcroft-karp-algorithm/practice-problems.md) |
+| 184 | 2-SAT Problem Formulation via Implication Graphs | [Open Topic](08-graphs/2-sat-problem/README.md) | Advanced | Not Started | [Videos](08-graphs/2-sat-problem/video-resources.md) \| [Practice](08-graphs/2-sat-problem/practice-problems.md) |
+| 185 | Transitive Closure via Bitsets in O(V^3 / 64) | [Open Topic](08-graphs/transitive-closure/README.md) | Intermediate | Not Started | [Videos](08-graphs/transitive-closure/video-resources.md) \| [Practice](08-graphs/transitive-closure/practice-problems.md) |
+| 186 | Graph Colouring and Chromatic Numbers | [Open Topic](08-graphs/graph-colouring/README.md) | Advanced | Not Started | [Videos](08-graphs/graph-colouring/video-resources.md) \| [Practice](08-graphs/graph-colouring/practice-problems.md) |
+| 187 | Treewidth Basics and Tree Decompositions | [Open Topic](08-graphs/treewidth-basics/README.md) | Master | Not Started | [Videos](08-graphs/treewidth-basics/video-resources.md) \| [Practice](08-graphs/treewidth-basics/practice-problems.md) |
+
+### 09. Dynamic Programming
+
+Master Domain Index: [`Open Domain Index`](09-dynamic-programming/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 188 | DP Fundamentals (Optimal Substructure & Overlap) | [Open Topic](09-dynamic-programming/dp-fundamentals-and-principles/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/dp-fundamentals-and-principles/video-resources.md) \| [Practice](09-dynamic-programming/dp-fundamentals-and-principles/practice-problems.md) |
+| 189 | State Space Definition and Transition Formulations | [Open Topic](09-dynamic-programming/state-definition-and-transitions/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/state-definition-and-transitions/video-resources.md) \| [Practice](09-dynamic-programming/state-definition-and-transitions/practice-problems.md) |
+| 190 | Memoization (Top-Down) vs. Tabulation (Bottom-Up) | [Open Topic](09-dynamic-programming/memoization-vs-tabulation/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/memoization-vs-tabulation/video-resources.md) \| [Practice](09-dynamic-programming/memoization-vs-tabulation/practice-problems.md) |
+| 191 | Rolling Arrays and Dimension Reduction | [Open Topic](09-dynamic-programming/space-optimisation-techniques/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/space-optimisation-techniques/video-resources.md) \| [Practice](09-dynamic-programming/space-optimisation-techniques/practice-problems.md) |
+| 192 | 1D Dynamic Programming Transitions | [Open Topic](09-dynamic-programming/1d-dynamic-programming/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/1d-dynamic-programming/video-resources.md) \| [Practice](09-dynamic-programming/1d-dynamic-programming/practice-problems.md) |
+| 193 | Multidimensional DP (2D and 3D State Spaces) | [Open Topic](09-dynamic-programming/2d-and-3d-dp/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/2d-and-3d-dp/video-resources.md) \| [Practice](09-dynamic-programming/2d-and-3d-dp/practice-problems.md) |
+| 194 | Grid DP, Minimum Cost Paths and Obstacles | [Open Topic](09-dynamic-programming/grid-dp-and-path-counting/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/grid-dp-and-path-counting/video-resources.md) \| [Practice](09-dynamic-programming/grid-dp-and-path-counting/practice-problems.md) |
+| 195 | Linear Recurrence Transitions and Constant Factors | [Open Topic](09-dynamic-programming/fibonacci-and-linear-recurrences-dp/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/fibonacci-and-linear-recurrences-dp/video-resources.md) \| [Practice](09-dynamic-programming/fibonacci-and-linear-recurrences-dp/practice-problems.md) |
+| 196 | 0/1 Knapsack (Item Subsets and Capacity Budgets) | [Open Topic](09-dynamic-programming/0-1-knapsack/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/0-1-knapsack/video-resources.md) \| [Practice](09-dynamic-programming/0-1-knapsack/practice-problems.md) |
+| 197 | Unbounded Knapsack and Unlimited Reuse | [Open Topic](09-dynamic-programming/unbounded-knapsack/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/unbounded-knapsack/video-resources.md) \| [Practice](09-dynamic-programming/unbounded-knapsack/practice-problems.md) |
+| 198 | Subset Sum Problem and Partition Equal Subsets | [Open Topic](09-dynamic-programming/subset-sum-and-partition/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/subset-sum-and-partition/video-resources.md) \| [Practice](09-dynamic-programming/subset-sum-and-partition/practice-problems.md) |
+| 199 | Coin Change (Minimum Coins and Total Combinations) | [Open Topic](09-dynamic-programming/coin-change-problem/README.md) | Beginner | Not Started | [Videos](09-dynamic-programming/coin-change-problem/video-resources.md) \| [Practice](09-dynamic-programming/coin-change-problem/practice-problems.md) |
+| 200 | Longest Increasing Subsequence (LIS O(N log N)) | [Open Topic](09-dynamic-programming/longest-increasing-subsequence/README.md) | Intermediate | **Completed** | [Videos](09-dynamic-programming/longest-increasing-subsequence/video-resources.md) \| [Practice](09-dynamic-programming/longest-increasing-subsequence/practice-problems.md) |
+| 201 | Longest Common Subsequence (LCS) | [Open Topic](09-dynamic-programming/longest-common-subsequence/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/longest-common-subsequence/video-resources.md) \| [Practice](09-dynamic-programming/longest-common-subsequence/practice-problems.md) |
+| 202 | Longest Common Substring Dynamic Programming | [Open Topic](09-dynamic-programming/longest-common-substring/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/longest-common-substring/video-resources.md) \| [Practice](09-dynamic-programming/longest-common-substring/practice-problems.md) |
+| 203 | Edit Distance (Levenshtein Distance) | [Open Topic](09-dynamic-programming/edit-distance/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/edit-distance/video-resources.md) \| [Practice](09-dynamic-programming/edit-distance/practice-problems.md) |
+| 204 | String DP and Substring Alignments | [Open Topic](09-dynamic-programming/string-dp/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/string-dp/video-resources.md) \| [Practice](09-dynamic-programming/string-dp/practice-problems.md) |
+| 205 | Interval DP (Subsegment Merging and Matrix Chains) | [Open Topic](09-dynamic-programming/interval-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/interval-dp/video-resources.md) \| [Practice](09-dynamic-programming/interval-dp/practice-problems.md) |
+| 206 | Digit DP (Counting Numbers in Range [L, R]) | [Open Topic](09-dynamic-programming/digit-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/digit-dp/video-resources.md) \| [Practice](09-dynamic-programming/digit-dp/practice-problems.md) |
+| 207 | Bitmask DP and Exponential Subset Search | [Open Topic](09-dynamic-programming/bitmask-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/bitmask-dp/video-resources.md) \| [Practice](09-dynamic-programming/bitmask-dp/practice-problems.md) |
+| 208 | Submask Enumeration DP in O(3^N) | [Open Topic](09-dynamic-programming/submask-enumeration-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/submask-enumeration-dp/video-resources.md) \| [Practice](09-dynamic-programming/submask-enumeration-dp/practice-problems.md) |
+| 209 | Tree Dynamic Programming and Subtree Returns | [Open Topic](09-dynamic-programming/tree-dp/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/tree-dp/video-resources.md) \| [Practice](09-dynamic-programming/tree-dp/practice-problems.md) |
+| 210 | Rerooting DP (All-Nodes Tree Optimization) | [Open Topic](09-dynamic-programming/rerooting-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/rerooting-dp/video-resources.md) \| [Practice](09-dynamic-programming/rerooting-dp/practice-problems.md) |
+| 211 | Dynamic Programming on Directed Acyclic Graphs | [Open Topic](09-dynamic-programming/dag-dp/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/dag-dp/video-resources.md) \| [Practice](09-dynamic-programming/dag-dp/practice-problems.md) |
+| 212 | Probability and Expected Value DP | [Open Topic](09-dynamic-programming/probability-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/probability-dp/video-resources.md) \| [Practice](09-dynamic-programming/probability-dp/practice-problems.md) |
+| 213 | Game Theory DP (Winning and Losing Positions) | [Open Topic](09-dynamic-programming/game-dp/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/game-dp/video-resources.md) \| [Practice](09-dynamic-programming/game-dp/practice-problems.md) |
+| 214 | DP Acceleration via std::bitset (1/64 Speedup) | [Open Topic](09-dynamic-programming/dp-with-bitsets/README.md) | Intermediate | Not Started | [Videos](09-dynamic-programming/dp-with-bitsets/video-resources.md) \| [Practice](09-dynamic-programming/dp-with-bitsets/practice-problems.md) |
+| 215 | Divide and Conquer DP Optimisation (Quadrangle Inequality) | [Open Topic](09-dynamic-programming/divide-and-conquer-dp-optimisation/README.md) | Expert | Not Started | [Videos](09-dynamic-programming/divide-and-conquer-dp-optimisation/video-resources.md) \| [Practice](09-dynamic-programming/divide-and-conquer-dp-optimisation/practice-problems.md) |
+| 216 | Convex Hull Trick (Static and Dynamic CHT) | [Open Topic](09-dynamic-programming/convex-hull-trick/README.md) | Expert | Not Started | [Videos](09-dynamic-programming/convex-hull-trick/video-resources.md) \| [Practice](09-dynamic-programming/convex-hull-trick/practice-problems.md) |
+| 217 | Knuth's Optimization for Interval DP O(N^2) | [Open Topic](09-dynamic-programming/knuth-optimisation/README.md) | Expert | Not Started | [Videos](09-dynamic-programming/knuth-optimisation/video-resources.md) \| [Practice](09-dynamic-programming/knuth-optimisation/practice-problems.md) |
+| 218 | Sum Over Subsets (SOS) DP in O(N * 2^N) | [Open Topic](09-dynamic-programming/sos-dp/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/sos-dp/video-resources.md) \| [Practice](09-dynamic-programming/sos-dp/practice-problems.md) |
+| 219 | Alien's Trick (WQS Binary Search on Lagrange Multipliers) | [Open Topic](09-dynamic-programming/aliens-trick-wqs-binary-search/README.md) | Master | Not Started | [Videos](09-dynamic-programming/aliens-trick-wqs-binary-search/video-resources.md) \| [Practice](09-dynamic-programming/aliens-trick-wqs-binary-search/practice-problems.md) |
+| 220 | Monotone Queue DP Optimization for Sliding Constraints | [Open Topic](09-dynamic-programming/monotone-queue-dp-optimisation/README.md) | Advanced | Not Started | [Videos](09-dynamic-programming/monotone-queue-dp-optimisation/video-resources.md) \| [Practice](09-dynamic-programming/monotone-queue-dp-optimisation/practice-problems.md) |
+
+### 10. Advanced Data Structures
+
+Master Domain Index: [`Open Domain Index`](10-advanced-data-structures/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 221 | Fenwick Tree (Binary Indexed Tree PURQ) | [Open Topic](10-advanced-data-structures/fenwick-tree-point-update-range-query/README.md) | Intermediate | Not Started | [Videos](10-advanced-data-structures/fenwick-tree-point-update-range-query/video-resources.md) \| [Practice](10-advanced-data-structures/fenwick-tree-point-update-range-query/practice-problems.md) |
+| 222 | 2D Fenwick Tree for Grid Range Aggregations | [Open Topic](10-advanced-data-structures/fenwick-tree-2d/README.md) | Intermediate | Not Started | [Videos](10-advanced-data-structures/fenwick-tree-2d/video-resources.md) \| [Practice](10-advanced-data-structures/fenwick-tree-2d/practice-problems.md) |
+| 223 | Segment Tree (Point Updates & Range Queries) | [Open Topic](10-advanced-data-structures/segment-tree/README.md) | Intermediate | **Completed** | [Videos](10-advanced-data-structures/segment-tree/video-resources.md) \| [Practice](10-advanced-data-structures/segment-tree/practice-problems.md) |
+| 224 | Segment Tree with Lazy Propagation (Range Updates) | [Open Topic](10-advanced-data-structures/segment-tree-lazy-propagation/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/segment-tree-lazy-propagation/video-resources.md) \| [Practice](10-advanced-data-structures/segment-tree-lazy-propagation/practice-problems.md) |
+| 225 | Persistent Segment Tree (Versioned Range Queries) | [Open Topic](10-advanced-data-structures/persistent-segment-tree/README.md) | Expert | Not Started | [Videos](10-advanced-data-structures/persistent-segment-tree/video-resources.md) \| [Practice](10-advanced-data-structures/persistent-segment-tree/practice-problems.md) |
+| 226 | Dynamic Segment Tree (Coordinate Spaces up to 10^9) | [Open Topic](10-advanced-data-structures/dynamic-segment-tree/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/dynamic-segment-tree/video-resources.md) \| [Practice](10-advanced-data-structures/dynamic-segment-tree/practice-problems.md) |
+| 227 | Merge Sort Tree for Range Element Counting | [Open Topic](10-advanced-data-structures/merge-sort-tree/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/merge-sort-tree/video-resources.md) \| [Practice](10-advanced-data-structures/merge-sort-tree/practice-problems.md) |
+| 228 | Sparse Table for Static O(1) Idempotent Queries | [Open Topic](10-advanced-data-structures/sparse-table/README.md) | Intermediate | Not Started | [Videos](10-advanced-data-structures/sparse-table/video-resources.md) \| [Practice](10-advanced-data-structures/sparse-table/practice-problems.md) |
+| 229 | Disjoint Sparse Table for General Monoids in O(1) | [Open Topic](10-advanced-data-structures/disjoint-sparse-table/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/disjoint-sparse-table/video-resources.md) \| [Practice](10-advanced-data-structures/disjoint-sparse-table/practice-problems.md) |
+| 230 | Sqrt Decomposition (Block Decompositions in O(sqrt(N))) | [Open Topic](10-advanced-data-structures/sqrt-decomposition/README.md) | Intermediate | Not Started | [Videos](10-advanced-data-structures/sqrt-decomposition/video-resources.md) \| [Practice](10-advanced-data-structures/sqrt-decomposition/practice-problems.md) |
+| 231 | Mo's Algorithm for Offline Range Queries | [Open Topic](10-advanced-data-structures/mos-algorithm/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/mos-algorithm/video-resources.md) \| [Practice](10-advanced-data-structures/mos-algorithm/practice-problems.md) |
+| 232 | Mo's Algorithm with Updates in O(N^(5/3)) | [Open Topic](10-advanced-data-structures/mos-algorithm-with-updates/README.md) | Expert | Not Started | [Videos](10-advanced-data-structures/mos-algorithm-with-updates/video-resources.md) \| [Practice](10-advanced-data-structures/mos-algorithm-with-updates/practice-problems.md) |
+| 233 | DSU on Tree (Sack / Small-to-Large Merging on Trees) | [Open Topic](10-advanced-data-structures/dsu-on-tree-sack/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/dsu-on-tree-sack/video-resources.md) \| [Practice](10-advanced-data-structures/dsu-on-tree-sack/practice-problems.md) |
+| 234 | Treap (Randomized Cartesian Balanced Search Tree) | [Open Topic](10-advanced-data-structures/treap-cartesian-tree/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/treap-cartesian-tree/video-resources.md) \| [Practice](10-advanced-data-structures/treap-cartesian-tree/practice-problems.md) |
+| 235 | Implicit Treap for Dynamic Array Splitting and Reversing | [Open Topic](10-advanced-data-structures/implicit-treap/README.md) | Expert | Not Started | [Videos](10-advanced-data-structures/implicit-treap/video-resources.md) \| [Practice](10-advanced-data-structures/implicit-treap/practice-problems.md) |
+| 236 | AVL Tree (Strict Height-Balanced BST) | [Open Topic](10-advanced-data-structures/avl-tree/README.md) | Intermediate | Not Started | [Videos](10-advanced-data-structures/avl-tree/video-resources.md) \| [Practice](10-advanced-data-structures/avl-tree/practice-problems.md) |
+| 237 | Red-Black Tree Structure and Rebalancing Rules | [Open Topic](10-advanced-data-structures/red-black-tree/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/red-black-tree/video-resources.md) \| [Practice](10-advanced-data-structures/red-black-tree/practice-problems.md) |
+| 238 | Order Statistic Tree (Policy-Based Data Structures) | [Open Topic](10-advanced-data-structures/order-statistic-tree/README.md) | Intermediate | Not Started | [Videos](10-advanced-data-structures/order-statistic-tree/video-resources.md) \| [Practice](10-advanced-data-structures/order-statistic-tree/practice-problems.md) |
+| 239 | Link-Cut Tree (Splay Tree Path Decompositions) | [Open Topic](10-advanced-data-structures/link-cut-tree/README.md) | Master | Not Started | [Videos](10-advanced-data-structures/link-cut-tree/video-resources.md) \| [Practice](10-advanced-data-structures/link-cut-tree/practice-problems.md) |
+| 240 | Li Chao Tree for Dynamic Line Envelopes | [Open Topic](10-advanced-data-structures/li-chao-tree/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/li-chao-tree/video-resources.md) \| [Practice](10-advanced-data-structures/li-chao-tree/practice-problems.md) |
+| 241 | Wavelet Tree for Range Quantiles and Rank Queries | [Open Topic](10-advanced-data-structures/wavelet-tree/README.md) | Expert | Not Started | [Videos](10-advanced-data-structures/wavelet-tree/video-resources.md) \| [Practice](10-advanced-data-structures/wavelet-tree/practice-problems.md) |
+| 242 | Rope Data Structure for Heavy String Splicing | [Open Topic](10-advanced-data-structures/rope-data-structure/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/rope-data-structure/video-resources.md) \| [Practice](10-advanced-data-structures/rope-data-structure/practice-problems.md) |
+| 243 | Cartesian Tree Construction in O(N) Linear Time | [Open Topic](10-advanced-data-structures/cartesian-tree/README.md) | Advanced | Not Started | [Videos](10-advanced-data-structures/cartesian-tree/video-resources.md) \| [Practice](10-advanced-data-structures/cartesian-tree/practice-problems.md) |
+
+### 11. String Algorithms
+
+Master Domain Index: [`Open Domain Index`](11-string-algorithms/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 244 | String Basics, Representations and Lexicographic Order | [Open Topic](11-string-algorithms/string-basics-and-representations/README.md) | Beginner | Not Started | [Videos](11-string-algorithms/string-basics-and-representations/video-resources.md) \| [Practice](11-string-algorithms/string-basics-and-representations/practice-problems.md) |
+| 245 | String Hashing and Collision Analysis | [Open Topic](11-string-algorithms/string-hashing/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/string-hashing/video-resources.md) \| [Practice](11-string-algorithms/string-hashing/practice-problems.md) |
+| 246 | Polynomial Rolling Hash and O(1) Substring Hashes | [Open Topic](11-string-algorithms/polynomial-rolling-hash/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/polynomial-rolling-hash/video-resources.md) \| [Practice](11-string-algorithms/polynomial-rolling-hash/practice-problems.md) |
+| 247 | Double Hashing (Mitigating Anti-Hash Collisions) | [Open Topic](11-string-algorithms/double-hashing/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/double-hashing/video-resources.md) \| [Practice](11-string-algorithms/double-hashing/practice-problems.md) |
+| 248 | Prefix Function and String Periodicities | [Open Topic](11-string-algorithms/prefix-function-kmp/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/prefix-function-kmp/video-resources.md) \| [Practice](11-string-algorithms/prefix-function-kmp/practice-problems.md) |
+| 249 | Knuth-Morris-Pratt (KMP) Pattern Matching O(N + M) | [Open Topic](11-string-algorithms/knuth-morris-pratt-algorithm/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/knuth-morris-pratt-algorithm/video-resources.md) \| [Practice](11-string-algorithms/knuth-morris-pratt-algorithm/practice-problems.md) |
+| 250 | Z-Algorithm and Linear String Matching | [Open Topic](11-string-algorithms/z-algorithm/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/z-algorithm/video-resources.md) \| [Practice](11-string-algorithms/z-algorithm/practice-problems.md) |
+| 251 | Trie (Prefix Tree for Dictionary Lookups) | [Open Topic](11-string-algorithms/trie-prefix-tree/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/trie-prefix-tree/video-resources.md) \| [Practice](11-string-algorithms/trie-prefix-tree/practice-problems.md) |
+| 252 | Binary Trie for Maximum XOR Pair Queries | [Open Topic](11-string-algorithms/binary-trie/README.md) | Intermediate | Not Started | [Videos](11-string-algorithms/binary-trie/video-resources.md) \| [Practice](11-string-algorithms/binary-trie/practice-problems.md) |
+| 253 | Aho-Corasick Multi-Pattern Matching Automaton | [Open Topic](11-string-algorithms/aho-corasick-automaton/README.md) | Advanced | Not Started | [Videos](11-string-algorithms/aho-corasick-automaton/video-resources.md) \| [Practice](11-string-algorithms/aho-corasick-automaton/practice-problems.md) |
+| 254 | Manacher's Algorithm for All Palindromic Substrings O(N) | [Open Topic](11-string-algorithms/manachers-algorithm/README.md) | Advanced | Not Started | [Videos](11-string-algorithms/manachers-algorithm/video-resources.md) \| [Practice](11-string-algorithms/manachers-algorithm/practice-problems.md) |
+| 255 | Palindromic Tree (EerTree for Palindrome Counting) | [Open Topic](11-string-algorithms/palindromic-tree-eertree/README.md) | Expert | Not Started | [Videos](11-string-algorithms/palindromic-tree-eertree/video-resources.md) \| [Practice](11-string-algorithms/palindromic-tree-eertree/practice-problems.md) |
+| 256 | Suffix Array Construction in O(N log N) | [Open Topic](11-string-algorithms/suffix-array/README.md) | Advanced | Not Started | [Videos](11-string-algorithms/suffix-array/video-resources.md) \| [Practice](11-string-algorithms/suffix-array/practice-problems.md) |
+| 257 | Longest Common Prefix (LCP) Array via Kasai's Algorithm | [Open Topic](11-string-algorithms/lcp-array-kasai/README.md) | Advanced | Not Started | [Videos](11-string-algorithms/lcp-array-kasai/video-resources.md) \| [Practice](11-string-algorithms/lcp-array-kasai/practice-problems.md) |
+| 258 | Suffix Automaton (DAWG Encoding All Substrings in O(N)) | [Open Topic](11-string-algorithms/suffix-automaton/README.md) | Expert | Not Started | [Videos](11-string-algorithms/suffix-automaton/video-resources.md) \| [Practice](11-string-algorithms/suffix-automaton/practice-problems.md) |
+| 259 | Lyndon Factorisation and Duval's Algorithm | [Open Topic](11-string-algorithms/lyndon-factorisation/README.md) | Master | Not Started | [Videos](11-string-algorithms/lyndon-factorisation/video-resources.md) \| [Practice](11-string-algorithms/lyndon-factorisation/practice-problems.md) |
+| 260 | Suffix Tree (Ukkonen's Online Construction) | [Open Topic](11-string-algorithms/suffix-tree-ukkonen/README.md) | Master | Not Started | [Videos](11-string-algorithms/suffix-tree-ukkonen/video-resources.md) \| [Practice](11-string-algorithms/suffix-tree-ukkonen/practice-problems.md) |
+
+### 12. Number Theory
+
+Master Domain Index: [`Open Domain Index`](12-number-theory/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 261 | Divisibility, Multiples and Prime Factorization | [Open Topic](12-number-theory/divisibility-and-factors/README.md) | Beginner | Not Started | [Videos](12-number-theory/divisibility-and-factors/video-resources.md) \| [Practice](12-number-theory/divisibility-and-factors/practice-problems.md) |
+| 262 | Prime Numbers and Fundamental Theorem of Arithmetic | [Open Topic](12-number-theory/prime-numbers/README.md) | Beginner | Not Started | [Videos](12-number-theory/prime-numbers/video-resources.md) \| [Practice](12-number-theory/prime-numbers/practice-problems.md) |
+| 263 | Sieve of Eratosthenes & Linear Sieve | [Open Topic](12-number-theory/sieve-of-eratosthenes/README.md) | Beginner | **Completed** | [Videos](12-number-theory/sieve-of-eratosthenes/video-resources.md) \| [Practice](12-number-theory/sieve-of-eratosthenes/practice-problems.md) |
+| 264 | Euler's Linear Sieve with Smallest Prime Factor (SPF) | [Open Topic](12-number-theory/linear-sieve-eulers-sieve/README.md) | Intermediate | Not Started | [Videos](12-number-theory/linear-sieve-eulers-sieve/video-resources.md) \| [Practice](12-number-theory/linear-sieve-eulers-sieve/practice-problems.md) |
+| 265 | Segmented Sieve for Ranges up to 10^12 | [Open Topic](12-number-theory/segmented-sieve/README.md) | Intermediate | Not Started | [Videos](12-number-theory/segmented-sieve/video-resources.md) \| [Practice](12-number-theory/segmented-sieve/practice-problems.md) |
+| 266 | Prime Factorisation Algorithms in O(sqrt(N)) | [Open Topic](12-number-theory/prime-factorisation/README.md) | Beginner | Not Started | [Videos](12-number-theory/prime-factorisation/video-resources.md) \| [Practice](12-number-theory/prime-factorisation/practice-problems.md) |
+| 267 | Number of Divisors d(N) and Sum of Divisors sigma(N) | [Open Topic](12-number-theory/divisors-and-counting/README.md) | Beginner | Not Started | [Videos](12-number-theory/divisors-and-counting/video-resources.md) \| [Practice](12-number-theory/divisors-and-counting/practice-problems.md) |
+| 268 | Greatest Common Divisor (GCD) and Least Common Multiple | [Open Topic](12-number-theory/gcd-and-lcm/README.md) | Beginner | Not Started | [Videos](12-number-theory/gcd-and-lcm/video-resources.md) \| [Practice](12-number-theory/gcd-and-lcm/practice-problems.md) |
+| 269 | Euclidean Algorithm for Logarithmic GCD | [Open Topic](12-number-theory/euclidean-algorithm/README.md) | Beginner | Not Started | [Videos](12-number-theory/euclidean-algorithm/video-resources.md) \| [Practice](12-number-theory/euclidean-algorithm/practice-problems.md) |
+| 270 | Extended Euclidean Algorithm and Bezout's Identity | [Open Topic](12-number-theory/extended-euclidean-algorithm/README.md) | Intermediate | Not Started | [Videos](12-number-theory/extended-euclidean-algorithm/video-resources.md) \| [Practice](12-number-theory/extended-euclidean-algorithm/practice-problems.md) |
+| 271 | Modular Arithmetic Invariants and Congruence | [Open Topic](12-number-theory/modular-arithmetic/README.md) | Beginner | Not Started | [Videos](12-number-theory/modular-arithmetic/video-resources.md) \| [Practice](12-number-theory/modular-arithmetic/practice-problems.md) |
+| 272 | Modular Exponentiation via Binary Exponentiation | [Open Topic](12-number-theory/modular-exponentiation/README.md) | Beginner | Not Started | [Videos](12-number-theory/modular-exponentiation/video-resources.md) \| [Practice](12-number-theory/modular-exponentiation/practice-problems.md) |
+| 273 | Modular Multiplicative Inverse (Fermat & ExtGCD) | [Open Topic](12-number-theory/modular-inverse/README.md) | Intermediate | Not Started | [Videos](12-number-theory/modular-inverse/video-resources.md) \| [Practice](12-number-theory/modular-inverse/practice-problems.md) |
+| 274 | Fermat's Little Theorem and Modulo Primes | [Open Topic](12-number-theory/fermats-little-theorem/README.md) | Beginner | Not Started | [Videos](12-number-theory/fermats-little-theorem/video-resources.md) \| [Practice](12-number-theory/fermats-little-theorem/practice-problems.md) |
+| 275 | Euler's Totient Function phi(N) and Euler's Theorem | [Open Topic](12-number-theory/eulers-totient-function/README.md) | Intermediate | Not Started | [Videos](12-number-theory/eulers-totient-function/video-resources.md) \| [Practice](12-number-theory/eulers-totient-function/practice-problems.md) |
+| 276 | Chinese Remainder Theorem (CRT) for Simultaneous Congruences | [Open Topic](12-number-theory/chinese-remainder-theorem/README.md) | Advanced | Not Started | [Videos](12-number-theory/chinese-remainder-theorem/video-resources.md) \| [Practice](12-number-theory/chinese-remainder-theorem/practice-problems.md) |
+| 277 | Mobius Function mu(N) and Dirichlet Inversion | [Open Topic](12-number-theory/mobius-function-and-inversion/README.md) | Advanced | Not Started | [Videos](12-number-theory/mobius-function-and-inversion/video-resources.md) \| [Practice](12-number-theory/mobius-function-and-inversion/practice-problems.md) |
+| 278 | Linear Diophantine Equations (Ax + By = C) | [Open Topic](12-number-theory/linear-diophantine-equations/README.md) | Intermediate | Not Started | [Videos](12-number-theory/linear-diophantine-equations/video-resources.md) \| [Practice](12-number-theory/linear-diophantine-equations/practice-problems.md) |
+| 279 | Primitive Roots and Cyclic Modulo Structures | [Open Topic](12-number-theory/primitive-roots/README.md) | Advanced | Not Started | [Videos](12-number-theory/primitive-roots/video-resources.md) \| [Practice](12-number-theory/primitive-roots/practice-problems.md) |
+| 280 | Discrete Logarithm (Baby-Step Giant-Step Algorithm) | [Open Topic](12-number-theory/discrete-logarithm-baby-step-giant-step/README.md) | Advanced | Not Started | [Videos](12-number-theory/discrete-logarithm-baby-step-giant-step/video-resources.md) \| [Practice](12-number-theory/discrete-logarithm-baby-step-giant-step/practice-problems.md) |
+| 281 | Pollard's Rho Algorithm for O(N^(1/4)) Factorization | [Open Topic](12-number-theory/pollards-rho-algorithm/README.md) | Expert | Not Started | [Videos](12-number-theory/pollards-rho-algorithm/video-resources.md) \| [Practice](12-number-theory/pollards-rho-algorithm/practice-problems.md) |
+| 282 | Miller-Rabin Deterministic Primality Test | [Open Topic](12-number-theory/miller-rabin-primality-test/README.md) | Advanced | Not Started | [Videos](12-number-theory/miller-rabin-primality-test/video-resources.md) \| [Practice](12-number-theory/miller-rabin-primality-test/practice-problems.md) |
+| 283 | Wilson's Theorem and Factorial Properties | [Open Topic](12-number-theory/wilsons-theorem/README.md) | Intermediate | Not Started | [Videos](12-number-theory/wilsons-theorem/video-resources.md) \| [Practice](12-number-theory/wilsons-theorem/practice-problems.md) |
+| 284 | Factorial Modulo P in O(P log N) | [Open Topic](12-number-theory/factorial-modulo-p/README.md) | Advanced | Not Started | [Videos](12-number-theory/factorial-modulo-p/video-resources.md) \| [Practice](12-number-theory/factorial-modulo-p/practice-problems.md) |
+
+### 13. Combinatorics
+
+Master Domain Index: [`Open Domain Index`](13-combinatorics/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 285 | Permutations, Combinations and Basic Counting | [Open Topic](13-combinatorics/permutations-and-combinations/README.md) | Beginner | Not Started | [Videos](13-combinatorics/permutations-and-combinations/video-resources.md) \| [Practice](13-combinatorics/permutations-and-combinations/practice-problems.md) |
+| 286 | Factorials and Precomputed Modular Inverses | [Open Topic](13-combinatorics/factorials-and-inverses/README.md) | Beginner | Not Started | [Videos](13-combinatorics/factorials-and-inverses/video-resources.md) \| [Practice](13-combinatorics/factorials-and-inverses/practice-problems.md) |
+| 287 | Binomial Coefficients nCr and Multi-Query Precomputation | [Open Topic](13-combinatorics/binomial-coefficients/README.md) | Beginner | Not Started | [Videos](13-combinatorics/binomial-coefficients/video-resources.md) \| [Practice](13-combinatorics/binomial-coefficients/practice-problems.md) |
+| 288 | Pascal's Triangle and Recurrence Identities | [Open Topic](13-combinatorics/pascals-triangle/README.md) | Beginner | Not Started | [Videos](13-combinatorics/pascals-triangle/video-resources.md) \| [Practice](13-combinatorics/pascals-triangle/practice-problems.md) |
+| 289 | Stars and Bars Method for Integer Partitions | [Open Topic](13-combinatorics/stars-and-bars/README.md) | Intermediate | Not Started | [Videos](13-combinatorics/stars-and-bars/video-resources.md) \| [Practice](13-combinatorics/stars-and-bars/practice-problems.md) |
+| 290 | Pigeonhole Principle and Existence Proofs | [Open Topic](13-combinatorics/pigeonhole-principle/README.md) | Beginner | Not Started | [Videos](13-combinatorics/pigeonhole-principle/video-resources.md) \| [Practice](13-combinatorics/pigeonhole-principle/practice-problems.md) |
+| 291 | Principle of Inclusion-Exclusion (PIE) | [Open Topic](13-combinatorics/inclusion-exclusion-principle/README.md) | Intermediate | Not Started | [Videos](13-combinatorics/inclusion-exclusion-principle/video-resources.md) \| [Practice](13-combinatorics/inclusion-exclusion-principle/practice-problems.md) |
+| 292 | Catalan Numbers and Dyck Paths | [Open Topic](13-combinatorics/catalan-numbers/README.md) | Intermediate | Not Started | [Videos](13-combinatorics/catalan-numbers/video-resources.md) \| [Practice](13-combinatorics/catalan-numbers/practice-problems.md) |
+| 293 | Derangements and Permutations Without Fixed Points | [Open Topic](13-combinatorics/derangements/README.md) | Intermediate | Not Started | [Videos](13-combinatorics/derangements/video-resources.md) \| [Practice](13-combinatorics/derangements/practice-problems.md) |
+| 294 | Generating Functions for Sequence Representation | [Open Topic](13-combinatorics/generating-functions-basics/README.md) | Advanced | Not Started | [Videos](13-combinatorics/generating-functions-basics/video-resources.md) \| [Practice](13-combinatorics/generating-functions-basics/practice-problems.md) |
+| 295 | Combinatorial Identities (Vandermonde, Hockey Stick) | [Open Topic](13-combinatorics/combinatorial-identities/README.md) | Intermediate | Not Started | [Videos](13-combinatorics/combinatorial-identities/video-resources.md) \| [Practice](13-combinatorics/combinatorial-identities/practice-problems.md) |
+| 296 | Burnside's Lemma for Rotational Equivalence | [Open Topic](13-combinatorics/burnsides-lemma/README.md) | Expert | Not Started | [Videos](13-combinatorics/burnsides-lemma/video-resources.md) \| [Practice](13-combinatorics/burnsides-lemma/practice-problems.md) |
+| 297 | Polya Enumeration Theorem for Necklaces | [Open Topic](13-combinatorics/polya-enumeration-theorem/README.md) | Expert | Not Started | [Videos](13-combinatorics/polya-enumeration-theorem/video-resources.md) \| [Practice](13-combinatorics/polya-enumeration-theorem/practice-problems.md) |
+| 298 | Multinomial Coefficients and Multiset Partitions | [Open Topic](13-combinatorics/multinomial-coefficients/README.md) | Intermediate | Not Started | [Videos](13-combinatorics/multinomial-coefficients/video-resources.md) \| [Practice](13-combinatorics/multinomial-coefficients/practice-problems.md) |
+| 299 | Lucas' Theorem for Binomial Coefficients Modulo Small Primes | [Open Topic](13-combinatorics/lucas-theorem/README.md) | Advanced | Not Started | [Videos](13-combinatorics/lucas-theorem/video-resources.md) \| [Practice](13-combinatorics/lucas-theorem/practice-problems.md) |
+
+### 14. Bit Manipulation
+
+Master Domain Index: [`Open Domain Index`](14-bit-manipulation/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 300 | Binary Representation and Two's Complement | [Open Topic](14-bit-manipulation/binary-representation/README.md) | Beginner | Not Started | [Videos](14-bit-manipulation/binary-representation/video-resources.md) \| [Practice](14-bit-manipulation/binary-representation/practice-problems.md) |
+| 301 | Bit Manipulation & Bitwise Operations (Compiler Intrinsics) | [Open Topic](14-bit-manipulation/bitwise-operations-and-tricks/README.md) | Beginner | **Completed** | [Videos](14-bit-manipulation/bitwise-operations-and-tricks/video-resources.md) \| [Practice](14-bit-manipulation/bitwise-operations-and-tricks/practice-problems.md) |
+| 302 | Bitwise Operators (AND, OR, XOR, NOT) | [Open Topic](14-bit-manipulation/bitwise-and-or-xor-not/README.md) | Beginner | Not Started | [Videos](14-bit-manipulation/bitwise-and-or-xor-not/video-resources.md) \| [Practice](14-bit-manipulation/bitwise-and-or-xor-not/practice-problems.md) |
+| 303 | Bit Shifts (Logical vs. Arithmetic) and Rotations | [Open Topic](14-bit-manipulation/bit-shifts-and-rotations/README.md) | Beginner | Not Started | [Videos](14-bit-manipulation/bit-shifts-and-rotations/video-resources.md) \| [Practice](14-bit-manipulation/bit-shifts-and-rotations/practice-problems.md) |
+| 304 | Bitmask Mechanics (Set, Clear, Toggle, Check Bit i) | [Open Topic](14-bit-manipulation/set-clear-toggle-check-bit/README.md) | Beginner | Not Started | [Videos](14-bit-manipulation/set-clear-toggle-check-bit/video-resources.md) \| [Practice](14-bit-manipulation/set-clear-toggle-check-bit/practice-problems.md) |
+| 305 | Brian Kernighan's Bit Counting Algorithm | [Open Topic](14-bit-manipulation/brian-kernighan-algorithm/README.md) | Beginner | Not Started | [Videos](14-bit-manipulation/brian-kernighan-algorithm/video-resources.md) \| [Practice](14-bit-manipulation/brian-kernighan-algorithm/practice-problems.md) |
+| 306 | Population Count and Leading/Trailing Zeroes Intrinsics | [Open Topic](14-bit-manipulation/population-count-intrinsics/README.md) | Beginner | Not Started | [Videos](14-bit-manipulation/population-count-intrinsics/video-resources.md) \| [Practice](14-bit-manipulation/population-count-intrinsics/practice-problems.md) |
+| 307 | Algebraic Properties of XOR and Linear Independence | [Open Topic](14-bit-manipulation/xor-properties-and-basis/README.md) | Intermediate | Not Started | [Videos](14-bit-manipulation/xor-properties-and-basis/video-resources.md) \| [Practice](14-bit-manipulation/xor-properties-and-basis/practice-problems.md) |
+| 308 | Submask Enumeration Idiom in O(3^N) | [Open Topic](14-bit-manipulation/submask-enumeration/README.md) | Intermediate | Not Started | [Videos](14-bit-manipulation/submask-enumeration/video-resources.md) \| [Practice](14-bit-manipulation/submask-enumeration/practice-problems.md) |
+| 309 | Bitmask DP and Exponential Subset States | [Open Topic](14-bit-manipulation/bitmask-dynamic-programming/README.md) | Intermediate | Not Started | [Videos](14-bit-manipulation/bitmask-dynamic-programming/video-resources.md) \| [Practice](14-bit-manipulation/bitmask-dynamic-programming/practice-problems.md) |
+| 310 | Binary Trie for Maximum/Minimum XOR Queries | [Open Topic](14-bit-manipulation/binary-trie-xor-queries/README.md) | Intermediate | Not Started | [Videos](14-bit-manipulation/binary-trie-xor-queries/video-resources.md) \| [Practice](14-bit-manipulation/binary-trie-xor-queries/practice-problems.md) |
+| 311 | Sum Over Subsets (SOS) DP in O(N * 2^N) | [Open Topic](14-bit-manipulation/sum-over-subsets-sos-dp/README.md) | Advanced | Not Started | [Videos](14-bit-manipulation/sum-over-subsets-sos-dp/video-resources.md) \| [Practice](14-bit-manipulation/sum-over-subsets-sos-dp/practice-problems.md) |
+| 312 | Bitset Vectorization and Constant Factor Optimization | [Open Topic](14-bit-manipulation/bitset-optimisation/README.md) | Intermediate | Not Started | [Videos](14-bit-manipulation/bitset-optimisation/video-resources.md) \| [Practice](14-bit-manipulation/bitset-optimisation/practice-problems.md) |
+
+### 15. Probability and Statistics
+
+Master Domain Index: [`Open Domain Index`](15-probability-and-statistics/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 313 | Sample Spaces, Probability Axioms and Events | [Open Topic](15-probability-and-statistics/basic-probability-principles/README.md) | Beginner | Not Started | [Videos](15-probability-and-statistics/basic-probability-principles/video-resources.md) \| [Practice](15-probability-and-statistics/basic-probability-principles/practice-problems.md) |
+| 314 | Conditional Probability and Multiplication Rule | [Open Topic](15-probability-and-statistics/conditional-probability/README.md) | Beginner | Not Started | [Videos](15-probability-and-statistics/conditional-probability/video-resources.md) \| [Practice](15-probability-and-statistics/conditional-probability/practice-problems.md) |
+| 315 | Independence of Events and Pairwise Independence | [Open Topic](15-probability-and-statistics/independent-events/README.md) | Beginner | Not Started | [Videos](15-probability-and-statistics/independent-events/video-resources.md) \| [Practice](15-probability-and-statistics/independent-events/practice-problems.md) |
+| 316 | Bayes' Theorem and Prior/Posterior Updates | [Open Topic](15-probability-and-statistics/bayes-theorem/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/bayes-theorem/video-resources.md) \| [Practice](15-probability-and-statistics/bayes-theorem/practice-problems.md) |
+| 317 | Discrete Random Variables and Probability Mass Functions | [Open Topic](15-probability-and-statistics/random-variables/README.md) | Beginner | Not Started | [Videos](15-probability-and-statistics/random-variables/video-resources.md) \| [Practice](15-probability-and-statistics/random-variables/practice-problems.md) |
+| 318 | Expected Value and Mathematical Expectation | [Open Topic](15-probability-and-statistics/expected-value/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/expected-value/video-resources.md) \| [Practice](15-probability-and-statistics/expected-value/practice-problems.md) |
+| 319 | Linearity of Expectation and Indicator Variables | [Open Topic](15-probability-and-statistics/linearity-of-expectation/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/linearity-of-expectation/video-resources.md) \| [Practice](15-probability-and-statistics/linearity-of-expectation/practice-problems.md) |
+| 320 | Variance, Covariance and Standard Deviation | [Open Topic](15-probability-and-statistics/variance-and-standard-deviation/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/variance-and-standard-deviation/video-resources.md) \| [Practice](15-probability-and-statistics/variance-and-standard-deviation/practice-problems.md) |
+| 321 | Bernoulli and Binomial Distributions | [Open Topic](15-probability-and-statistics/bernoulli-and-binomial-distributions/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/bernoulli-and-binomial-distributions/video-resources.md) \| [Practice](15-probability-and-statistics/bernoulli-and-binomial-distributions/practice-problems.md) |
+| 322 | Geometric Distribution and Memorylessness | [Open Topic](15-probability-and-statistics/geometric-distribution/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/geometric-distribution/video-resources.md) \| [Practice](15-probability-and-statistics/geometric-distribution/practice-problems.md) |
+| 323 | Normal Distribution and Central Limit Theorem | [Open Topic](15-probability-and-statistics/normal-distribution-basics/README.md) | Advanced | Not Started | [Videos](15-probability-and-statistics/normal-distribution-basics/video-resources.md) \| [Practice](15-probability-and-statistics/normal-distribution-basics/practice-problems.md) |
+| 324 | Randomised Algorithms (Las Vegas vs. Monte Carlo) | [Open Topic](15-probability-and-statistics/randomised-algorithms/README.md) | Intermediate | Not Started | [Videos](15-probability-and-statistics/randomised-algorithms/video-resources.md) \| [Practice](15-probability-and-statistics/randomised-algorithms/practice-problems.md) |
+| 325 | Probability-Based Dynamic Programming | [Open Topic](15-probability-and-statistics/probability-dynamic-programming/README.md) | Advanced | Not Started | [Videos](15-probability-and-statistics/probability-dynamic-programming/video-resources.md) \| [Practice](15-probability-and-statistics/probability-dynamic-programming/practice-problems.md) |
+| 326 | Markov Chains, Transition Matrices and Random Walks | [Open Topic](15-probability-and-statistics/markov-chains-and-random-walks/README.md) | Advanced | Not Started | [Videos](15-probability-and-statistics/markov-chains-and-random-walks/video-resources.md) \| [Practice](15-probability-and-statistics/markov-chains-and-random-walks/practice-problems.md) |
+
+### 16. Game Theory
+
+Master Domain Index: [`Open Domain Index`](16-game-theory/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 327 | Combinatorial Game States and Game Directed Acyclic Graphs | [Open Topic](16-game-theory/game-states-and-graphs/README.md) | Beginner | Not Started | [Videos](16-game-theory/game-states-and-graphs/video-resources.md) \| [Practice](16-game-theory/game-states-and-graphs/practice-problems.md) |
+| 328 | Winning (N-Positions) vs. Losing (P-Positions) | [Open Topic](16-game-theory/winning-and-losing-positions/README.md) | Beginner | Not Started | [Videos](16-game-theory/winning-and-losing-positions/video-resources.md) \| [Practice](16-game-theory/winning-and-losing-positions/practice-problems.md) |
+| 329 | The Game of Nim and Bouton's Theorem | [Open Topic](16-game-theory/game-of-nim/README.md) | Intermediate | Not Started | [Videos](16-game-theory/game-of-nim/video-resources.md) \| [Practice](16-game-theory/game-of-nim/practice-problems.md) |
+| 330 | Sprague-Grundy Theorem and Composite Games | [Open Topic](16-game-theory/sprague-grundy-theorem/README.md) | Intermediate | Not Started | [Videos](16-game-theory/sprague-grundy-theorem/video-resources.md) \| [Practice](16-game-theory/sprague-grundy-theorem/practice-problems.md) |
+| 331 | Nim-Sums and Bitwise XOR Invariants | [Open Topic](16-game-theory/xor-games-and-nim-sum/README.md) | Intermediate | Not Started | [Videos](16-game-theory/xor-games-and-nim-sum/video-resources.md) \| [Practice](16-game-theory/xor-games-and-nim-sum/practice-problems.md) |
+| 332 | Impartial Games and the Minimum Excluded (mex) Rule | [Open Topic](16-game-theory/impartial-games-and-mex/README.md) | Intermediate | Not Started | [Videos](16-game-theory/impartial-games-and-mex/video-resources.md) \| [Practice](16-game-theory/impartial-games-and-mex/practice-problems.md) |
+| 333 | Grundy Values Computation and State Reductions | [Open Topic](16-game-theory/grundy-numbers/README.md) | Intermediate | Not Started | [Videos](16-game-theory/grundy-numbers/video-resources.md) \| [Practice](16-game-theory/grundy-numbers/practice-problems.md) |
+| 334 | Misere Play Convention (Last Move Loses) | [Open Topic](16-game-theory/misere-play-games/README.md) | Advanced | Not Started | [Videos](16-game-theory/misere-play-games/video-resources.md) \| [Practice](16-game-theory/misere-play-games/practice-problems.md) |
+| 335 | Symmetry Strategies and Pairing Arguments | [Open Topic](16-game-theory/combinatorial-game-strategies/README.md) | Intermediate | Not Started | [Videos](16-game-theory/combinatorial-game-strategies/video-resources.md) \| [Practice](16-game-theory/combinatorial-game-strategies/practice-problems.md) |
+| 336 | Subtraction Games and Periodic Grundy Sequences | [Open Topic](16-game-theory/subtraction-games/README.md) | Intermediate | Not Started | [Videos](16-game-theory/subtraction-games/video-resources.md) \| [Practice](16-game-theory/subtraction-games/practice-problems.md) |
+
+### 17. Computational Geometry
+
+Master Domain Index: [`Open Domain Index`](17-computational-geometry/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 337 | 2D Point and Vector Class Representations | [Open Topic](17-computational-geometry/points-and-vectors/README.md) | Beginner | Not Started | [Videos](17-computational-geometry/points-and-vectors/video-resources.md) \| [Practice](17-computational-geometry/points-and-vectors/practice-problems.md) |
+| 338 | Dot Product, Vector Angles and Orthogonal Projections | [Open Topic](17-computational-geometry/dot-product-and-projections/README.md) | Beginner | Not Started | [Videos](17-computational-geometry/dot-product-and-projections/video-resources.md) \| [Practice](17-computational-geometry/dot-product-and-projections/practice-problems.md) |
+| 339 | 2D Cross Product and Turn Orientation (CCW) | [Open Topic](17-computational-geometry/cross-product-and-orientation/README.md) | Beginner | Not Started | [Videos](17-computational-geometry/cross-product-and-orientation/video-resources.md) \| [Practice](17-computational-geometry/cross-product-and-orientation/practice-problems.md) |
+| 340 | Euclidean, Manhattan and Chebyshev Metrics | [Open Topic](17-computational-geometry/euclidean-and-manhattan-distance/README.md) | Beginner | Not Started | [Videos](17-computational-geometry/euclidean-and-manhattan-distance/video-resources.md) \| [Practice](17-computational-geometry/euclidean-and-manhattan-distance/practice-problems.md) |
+| 341 | Line and Line Segment Intersection Tests | [Open Topic](17-computational-geometry/line-and-segment-intersection/README.md) | Intermediate | Not Started | [Videos](17-computational-geometry/line-and-segment-intersection/video-resources.md) \| [Practice](17-computational-geometry/line-and-segment-intersection/practice-problems.md) |
+| 342 | Polygon Area via Gauss's Shoelace Formula and Pick's Theorem | [Open Topic](17-computational-geometry/polygon-area-shoelace-formula/README.md) | Intermediate | Not Started | [Videos](17-computational-geometry/polygon-area-shoelace-formula/video-resources.md) \| [Practice](17-computational-geometry/polygon-area-shoelace-formula/practice-problems.md) |
+| 343 | Convex Hull via Graham Scan Algorithm O(N log N) | [Open Topic](17-computational-geometry/convex-hull-graham-scan/README.md) | Intermediate | Not Started | [Videos](17-computational-geometry/convex-hull-graham-scan/video-resources.md) \| [Practice](17-computational-geometry/convex-hull-graham-scan/practice-problems.md) |
+| 344 | Andrew's Monotone Chain Convex Hull Algorithm | [Open Topic](17-computational-geometry/convex-hull-monotone-chain/README.md) | Intermediate | Not Started | [Videos](17-computational-geometry/convex-hull-monotone-chain/video-resources.md) \| [Practice](17-computational-geometry/convex-hull-monotone-chain/practice-problems.md) |
+| 345 | Closest Pair of Points via Divide-and-Conquer | [Open Topic](17-computational-geometry/closest-pair-of-points/README.md) | Advanced | Not Started | [Videos](17-computational-geometry/closest-pair-of-points/video-resources.md) \| [Practice](17-computational-geometry/closest-pair-of-points/practice-problems.md) |
+| 346 | Rotating Calipers for Polygon Diameter and Antipodal Pairs | [Open Topic](17-computational-geometry/rotating-calipers/README.md) | Advanced | Not Started | [Videos](17-computational-geometry/rotating-calipers/video-resources.md) \| [Practice](17-computational-geometry/rotating-calipers/practice-problems.md) |
+| 347 | Point-in-Polygon Tests (Ray Casting and Winding Number) | [Open Topic](17-computational-geometry/point-in-polygon-tests/README.md) | Intermediate | Not Started | [Videos](17-computational-geometry/point-in-polygon-tests/video-resources.md) \| [Practice](17-computational-geometry/point-in-polygon-tests/practice-problems.md) |
+| 348 | Sweep-Line Algorithms and Event Queues | [Open Topic](17-computational-geometry/sweep-line-geometry/README.md) | Advanced | Not Started | [Videos](17-computational-geometry/sweep-line-geometry/video-resources.md) \| [Practice](17-computational-geometry/sweep-line-geometry/practice-problems.md) |
+| 349 | Circle Geometry (Tangents, Intersections and Incircle) | [Open Topic](17-computational-geometry/circle-geometry/README.md) | Intermediate | Not Started | [Videos](17-computational-geometry/circle-geometry/video-resources.md) \| [Practice](17-computational-geometry/circle-geometry/practice-problems.md) |
+| 350 | Half-Plane Intersection in O(N log N) | [Open Topic](17-computational-geometry/half-plane-intersection/README.md) | Expert | Not Started | [Videos](17-computational-geometry/half-plane-intersection/video-resources.md) \| [Practice](17-computational-geometry/half-plane-intersection/practice-problems.md) |
+| 351 | Voronoi Diagrams and Delaunay Triangulation Basics | [Open Topic](17-computational-geometry/voronoi-diagrams-basics/README.md) | Master | Not Started | [Videos](17-computational-geometry/voronoi-diagrams-basics/video-resources.md) \| [Practice](17-computational-geometry/voronoi-diagrams-basics/practice-problems.md) |
+
+### 18. Advanced Graph Theory
+
+Master Domain Index: [`Open Domain Index`](18-advanced-graph-theory/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 352 | DAG Properties, Reachability and Transitive Reduction | [Open Topic](18-advanced-graph-theory/directed-acyclic-graphs-dag/README.md) | Intermediate | Not Started | [Videos](18-advanced-graph-theory/directed-acyclic-graphs-dag/video-resources.md) \| [Practice](18-advanced-graph-theory/directed-acyclic-graphs-dag/practice-problems.md) |
+| 353 | Dynamic Programming on DAGs and Path Counting | [Open Topic](18-advanced-graph-theory/dag-dynamic-programming/README.md) | Intermediate | Not Started | [Videos](18-advanced-graph-theory/dag-dynamic-programming/video-resources.md) \| [Practice](18-advanced-graph-theory/dag-dynamic-programming/practice-problems.md) |
+| 354 | Maximum Bipartite Matching and Augmenting Paths | [Open Topic](18-advanced-graph-theory/maximum-bipartite-matching/README.md) | Intermediate | Not Started | [Videos](18-advanced-graph-theory/maximum-bipartite-matching/video-resources.md) \| [Practice](18-advanced-graph-theory/maximum-bipartite-matching/practice-problems.md) |
+| 355 | Hopcroft-Karp Bipartite Matching in O(E sqrt(V)) | [Open Topic](18-advanced-graph-theory/hopcroft-karp-algorithm/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/hopcroft-karp-algorithm/video-resources.md) \| [Practice](18-advanced-graph-theory/hopcroft-karp-algorithm/practice-problems.md) |
+| 356 | Network Flow (Ford-Fulkerson Augmenting Path Method) | [Open Topic](18-advanced-graph-theory/network-flow-ford-fulkerson/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/network-flow-ford-fulkerson/video-resources.md) \| [Practice](18-advanced-graph-theory/network-flow-ford-fulkerson/practice-problems.md) |
+| 357 | Edmonds-Karp Max-Flow Algorithm in O(V E^2) | [Open Topic](18-advanced-graph-theory/edmonds-karp-algorithm/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/edmonds-karp-algorithm/video-resources.md) \| [Practice](18-advanced-graph-theory/edmonds-karp-algorithm/practice-problems.md) |
+| 358 | Dinic's Algorithm with Level Graphs and Blocking Flows | [Open Topic](18-advanced-graph-theory/dinics-algorithm/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/dinics-algorithm/video-resources.md) \| [Practice](18-advanced-graph-theory/dinics-algorithm/practice-problems.md) |
+| 359 | Max-Flow Min-Cut Reductions and Project Selection | [Open Topic](18-advanced-graph-theory/max-flow-min-cut-applications/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/max-flow-min-cut-applications/video-resources.md) \| [Practice](18-advanced-graph-theory/max-flow-min-cut-applications/practice-problems.md) |
+| 360 | Min-Cost Max-Flow (MCMF with Successive Shortest Path) | [Open Topic](18-advanced-graph-theory/min-cost-max-flow-mcmf/README.md) | Expert | Not Started | [Videos](18-advanced-graph-theory/min-cost-max-flow-mcmf/video-resources.md) \| [Practice](18-advanced-graph-theory/min-cost-max-flow-mcmf/practice-problems.md) |
+| 361 | Vertex and Edge Connectivity (Menger's Theorem) | [Open Topic](18-advanced-graph-theory/vertex-connectivity-and-edge-connectivity/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/vertex-connectivity-and-edge-connectivity/video-resources.md) \| [Practice](18-advanced-graph-theory/vertex-connectivity-and-edge-connectivity/practice-problems.md) |
+| 362 | 2-SAT Modeling and Truth Assignment via SCC | [Open Topic](18-advanced-graph-theory/2-sat-applications/README.md) | Advanced | Not Started | [Videos](18-advanced-graph-theory/2-sat-applications/video-resources.md) \| [Practice](18-advanced-graph-theory/2-sat-applications/practice-problems.md) |
+| 363 | Stoer-Wagner Algorithm for Global Minimum Cut O(V^3) | [Open Topic](18-advanced-graph-theory/stoer-wagner-global-min-cut/README.md) | Expert | Not Started | [Videos](18-advanced-graph-theory/stoer-wagner-global-min-cut/video-resources.md) \| [Practice](18-advanced-graph-theory/stoer-wagner-global-min-cut/practice-problems.md) |
+| 364 | Tree Decompositions and Treewidth Algorithms | [Open Topic](18-advanced-graph-theory/advanced-tree-decompositions/README.md) | Master | Not Started | [Videos](18-advanced-graph-theory/advanced-tree-decompositions/video-resources.md) \| [Practice](18-advanced-graph-theory/advanced-tree-decompositions/practice-problems.md) |
+
+### 19. Advanced Algorithmic Techniques
+
+Master Domain Index: [`Open Domain Index`](19-advanced-algorithmic-techniques/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 365 | Divide and Conquer Paradigms and Merge Invariants | [Open Topic](19-advanced-algorithmic-techniques/divide-and-conquer-techniques/README.md) | Intermediate | Not Started | [Videos](19-advanced-algorithmic-techniques/divide-and-conquer-techniques/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/divide-and-conquer-techniques/practice-problems.md) |
+| 366 | Divide and Conquer DP Optimisation | [Open Topic](19-advanced-algorithmic-techniques/divide-and-conquer-dp-optimisation/README.md) | Expert | Not Started | [Videos](19-advanced-algorithmic-techniques/divide-and-conquer-dp-optimisation/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/divide-and-conquer-dp-optimisation/practice-problems.md) |
+| 367 | Advanced Meet-in-the-Middle and Space Reductions | [Open Topic](19-advanced-algorithmic-techniques/meet-in-the-middle-advanced/README.md) | Intermediate | Not Started | [Videos](19-advanced-algorithmic-techniques/meet-in-the-middle-advanced/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/meet-in-the-middle-advanced/practice-problems.md) |
+| 368 | Randomised Hashing and Zobrist Hashing on Boards | [Open Topic](19-advanced-algorithmic-techniques/randomised-hashing-and-zobrist/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/randomised-hashing-and-zobrist/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/randomised-hashing-and-zobrist/practice-problems.md) |
+| 369 | Offline Query Sorting and Sweep Lines | [Open Topic](19-advanced-algorithmic-techniques/offline-query-processing/README.md) | Intermediate | Not Started | [Videos](19-advanced-algorithmic-techniques/offline-query-processing/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/offline-query-processing/practice-problems.md) |
+| 370 | Sweep-Line Technique for Geometric and Interval Events | [Open Topic](19-advanced-algorithmic-techniques/sweep-line-technique/README.md) | Intermediate | Not Started | [Videos](19-advanced-algorithmic-techniques/sweep-line-technique/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/sweep-line-technique/practice-problems.md) |
+| 371 | Sqrt Decomposition on Arrays and Trees | [Open Topic](19-advanced-algorithmic-techniques/sqrt-decomposition-arrays-and-trees/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/sqrt-decomposition-arrays-and-trees/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/sqrt-decomposition-arrays-and-trees/practice-problems.md) |
+| 372 | Parallel Binary Search for Multi-Query Convergence | [Open Topic](19-advanced-algorithmic-techniques/parallel-binary-search/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/parallel-binary-search/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/parallel-binary-search/practice-problems.md) |
+| 373 | Small-to-Large Merging (Sack Invariant O(N log^2 N)) | [Open Topic](19-advanced-algorithmic-techniques/small-to-large-merging/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/small-to-large-merging/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/small-to-large-merging/practice-problems.md) |
+| 374 | Rerooting Tree Queries in Linear Time | [Open Topic](19-advanced-algorithmic-techniques/rerooting-technique/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/rerooting-technique/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/rerooting-technique/practice-problems.md) |
+| 375 | Bitset Acceleration for Reachability and Knapsack | [Open Topic](19-advanced-algorithmic-techniques/bitset-optimisation-algorithms/README.md) | Intermediate | Not Started | [Videos](19-advanced-algorithmic-techniques/bitset-optimisation-algorithms/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/bitset-optimisation-algorithms/practice-problems.md) |
+| 376 | Convex Hull Trick (Static Lines and Dynamic Queries) | [Open Topic](19-advanced-algorithmic-techniques/convex-hull-trick/README.md) | Expert | Not Started | [Videos](19-advanced-algorithmic-techniques/convex-hull-trick/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/convex-hull-trick/practice-problems.md) |
+| 377 | Li Chao Segment Tree for Dynamic Line Insertion | [Open Topic](19-advanced-algorithmic-techniques/li-chao-tree/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/li-chao-tree/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/li-chao-tree/practice-problems.md) |
+| 378 | Matroid Theory and Matroid Intersection Algorithm | [Open Topic](19-advanced-algorithmic-techniques/matroid-intersection/README.md) | Master | Not Started | [Videos](19-advanced-algorithmic-techniques/matroid-intersection/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/matroid-intersection/practice-problems.md) |
+| 379 | CDQ Divide and Conquer for Multi-Dimensional Partial Orders | [Open Topic](19-advanced-algorithmic-techniques/cdq-divide-and-conquer/README.md) | Expert | Not Started | [Videos](19-advanced-algorithmic-techniques/cdq-divide-and-conquer/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/cdq-divide-and-conquer/practice-problems.md) |
+| 380 | Approximation Algorithms and 2-Approximation Bounds | [Open Topic](19-advanced-algorithmic-techniques/approximation-algorithms/README.md) | Advanced | Not Started | [Videos](19-advanced-algorithmic-techniques/approximation-algorithms/video-resources.md) \| [Practice](19-advanced-algorithmic-techniques/approximation-algorithms/practice-problems.md) |
+
+### 20. Advanced Mathematics
+
+Master Domain Index: [`Open Domain Index`](20-advanced-mathematics/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 381 | Mathematical Induction and Rigorous Contest Proofs | [Open Topic](20-advanced-mathematics/mathematical-induction-and-proofs/README.md) | Beginner | Not Started | [Videos](20-advanced-mathematics/mathematical-induction-and-proofs/video-resources.md) \| [Practice](20-advanced-mathematics/mathematical-induction-and-proofs/practice-problems.md) |
+| 382 | Linear Algebra, Vector Spaces and Matrix Bases | [Open Topic](20-advanced-mathematics/linear-algebra-fundamentals/README.md) | Intermediate | Not Started | [Videos](20-advanced-mathematics/linear-algebra-fundamentals/video-resources.md) \| [Practice](20-advanced-mathematics/linear-algebra-fundamentals/practice-problems.md) |
+| 383 | Matrix Multiplication and Associative Powers | [Open Topic](20-advanced-mathematics/matrix-multiplication-and-properties/README.md) | Beginner | Not Started | [Videos](20-advanced-mathematics/matrix-multiplication-and-properties/video-resources.md) \| [Practice](20-advanced-mathematics/matrix-multiplication-and-properties/practice-problems.md) |
+| 384 | Matrix Exponentiation for Linear Recurrences in O(K^3 log N) | [Open Topic](20-advanced-mathematics/matrix-exponentiation/README.md) | Intermediate | Not Started | [Videos](20-advanced-mathematics/matrix-exponentiation/video-resources.md) \| [Practice](20-advanced-mathematics/matrix-exponentiation/practice-problems.md) |
+| 385 | Linear Recurrences and the Berlekamp-Massey Algorithm | [Open Topic](20-advanced-mathematics/linear-recurrences-and-berlekamp-massey/README.md) | Master | Not Started | [Videos](20-advanced-mathematics/linear-recurrences-and-berlekamp-massey/video-resources.md) \| [Practice](20-advanced-mathematics/linear-recurrences-and-berlekamp-massey/practice-problems.md) |
+| 386 | Gaussian Elimination over Real Numbers O(N^3) | [Open Topic](20-advanced-mathematics/gaussian-elimination-reals/README.md) | Intermediate | Not Started | [Videos](20-advanced-mathematics/gaussian-elimination-reals/video-resources.md) \| [Practice](20-advanced-mathematics/gaussian-elimination-reals/practice-problems.md) |
+| 387 | Gaussian Elimination over F_2 and XOR Basis | [Open Topic](20-advanced-mathematics/gaussian-elimination-f2-xor-basis/README.md) | Intermediate | Not Started | [Videos](20-advanced-mathematics/gaussian-elimination-f2-xor-basis/video-resources.md) \| [Practice](20-advanced-mathematics/gaussian-elimination-f2-xor-basis/practice-problems.md) |
+| 388 | Polynomial Representation and Convolution | [Open Topic](20-advanced-mathematics/polynomial-multiplication/README.md) | Advanced | Not Started | [Videos](20-advanced-mathematics/polynomial-multiplication/video-resources.md) \| [Practice](20-advanced-mathematics/polynomial-multiplication/practice-problems.md) |
+| 389 | Fast Fourier Transform (Cooley-Tukey FFT O(N log N)) | [Open Topic](20-advanced-mathematics/fast-fourier-transform-fft/README.md) | Expert | Not Started | [Videos](20-advanced-mathematics/fast-fourier-transform-fft/video-resources.md) \| [Practice](20-advanced-mathematics/fast-fourier-transform-fft/practice-problems.md) |
+| 390 | Number Theoretic Transform (NTT Modulo 998244353) | [Open Topic](20-advanced-mathematics/number-theoretic-transform-ntt/README.md) | Expert | Not Started | [Videos](20-advanced-mathematics/number-theoretic-transform-ntt/video-resources.md) \| [Practice](20-advanced-mathematics/number-theoretic-transform-ntt/practice-problems.md) |
+| 391 | Lagrange Polynomial Interpolation in O(N) | [Open Topic](20-advanced-mathematics/lagrange-interpolation/README.md) | Advanced | Not Started | [Videos](20-advanced-mathematics/lagrange-interpolation/video-resources.md) \| [Practice](20-advanced-mathematics/lagrange-interpolation/practice-problems.md) |
+| 392 | Formal Power Series and Generating Functions | [Open Topic](20-advanced-mathematics/generating-functions-advanced/README.md) | Expert | Not Started | [Videos](20-advanced-mathematics/generating-functions-advanced/video-resources.md) \| [Practice](20-advanced-mathematics/generating-functions-advanced/practice-problems.md) |
+
+### 21. Contest Engineering
+
+Master Domain Index: [`Open Domain Index`](21-contest-engineering/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 393 | Fast I/O Mechanics and Stream Buffer Sizing | [Open Topic](21-contest-engineering/fast-input-output-systems/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/fast-input-output-systems/video-resources.md) \| [Practice](21-contest-engineering/fast-input-output-systems/practice-problems.md) |
+| 394 | Integer Overflow Prevention and Modulo Invariants | [Open Topic](21-contest-engineering/integer-overflow-prevention/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/integer-overflow-prevention/video-resources.md) \| [Practice](21-contest-engineering/integer-overflow-prevention/practice-problems.md) |
+| 395 | Floating-Point Precision and Epsilon Comparisons | [Open Topic](21-contest-engineering/floating-point-precision-safety/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/floating-point-precision-safety/video-resources.md) \| [Practice](21-contest-engineering/floating-point-precision-safety/practice-problems.md) |
+| 396 | Memory Allocation and Cache-Conscious Layouts | [Open Topic](21-contest-engineering/memory-optimisation-and-cache/README.md) | Intermediate | Not Started | [Videos](21-contest-engineering/memory-optimisation-and-cache/video-resources.md) \| [Practice](21-contest-engineering/memory-optimisation-and-cache/practice-problems.md) |
+| 397 | Recursion Stack Expansion on Linux and Judge Limits | [Open Topic](21-contest-engineering/recursion-stack-limits-and-expansion/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/recursion-stack-limits-and-expansion/video-resources.md) \| [Practice](21-contest-engineering/recursion-stack-limits-and-expansion/practice-problems.md) |
+| 398 | Iterative vs. Recursive Graph Traversals | [Open Topic](21-contest-engineering/iterative-vs-recursive-dfs/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/iterative-vs-recursive-dfs/video-resources.md) \| [Practice](21-contest-engineering/iterative-vs-recursive-dfs/practice-problems.md) |
+| 399 | Compiler Flags (-O2, -O3, Sanitizers, Native Flags) | [Open Topic](21-contest-engineering/compiler-optimisation-flags/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/compiler-optimisation-flags/video-resources.md) \| [Practice](21-contest-engineering/compiler-optimisation-flags/practice-problems.md) |
+| 400 | AddressSanitizer and UndefinedBehaviorSanitizer Debugging | [Open Topic](21-contest-engineering/debugging-techniques-and-sanitizers/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/debugging-techniques-and-sanitizers/video-resources.md) \| [Practice](21-contest-engineering/debugging-techniques-and-sanitizers/practice-problems.md) |
+| 401 | Differential Stress-Testing Harness (Solution vs. Brute) | [Open Topic](21-contest-engineering/stress-testing-harness/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/stress-testing-harness/video-resources.md) \| [Practice](21-contest-engineering/stress-testing-harness/practice-problems.md) |
+| 402 | Random Test Case Generation for Trees, Graphs and Arrays | [Open Topic](21-contest-engineering/random-test-generators/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/random-test-generators/video-resources.md) \| [Practice](21-contest-engineering/random-test-generators/practice-problems.md) |
+| 403 | Fuzz Testing and Automatic Counterexample Discovery | [Open Topic](21-contest-engineering/differential-testing-methodology/README.md) | Intermediate | Not Started | [Videos](21-contest-engineering/differential-testing-methodology/video-resources.md) \| [Practice](21-contest-engineering/differential-testing-methodology/practice-problems.md) |
+| 404 | Edge Case Taxonomy (Zero, Degenerate, Disconnected) | [Open Topic](21-contest-engineering/edge-case-identification/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/edge-case-identification/video-resources.md) \| [Practice](21-contest-engineering/edge-case-identification/practice-problems.md) |
+| 405 | Formal Loop Invariant and Exchange Proofs in Contests | [Open Topic](21-contest-engineering/correctness-proofs-and-invariants/README.md) | Intermediate | Not Started | [Videos](21-contest-engineering/correctness-proofs-and-invariants/video-resources.md) \| [Practice](21-contest-engineering/correctness-proofs-and-invariants/practice-problems.md) |
+| 406 | Editorial Reading Methodology and Pattern Extraction | [Open Topic](21-contest-engineering/editorial-reading-and-deconstruction/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/editorial-reading-and-deconstruction/video-resources.md) \| [Practice](21-contest-engineering/editorial-reading-and-deconstruction/practice-problems.md) |
+| 407 | Contest Strategy, Time Allocation and Problem Triage | [Open Topic](21-contest-engineering/contest-strategy-and-time-management/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/contest-strategy-and-time-management/video-resources.md) \| [Practice](21-contest-engineering/contest-strategy-and-time-management/practice-problems.md) |
+| 408 | Reading Difficulty Curves and Skipping Unproductive Traps | [Open Topic](21-contest-engineering/problem-selection-heuristics/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/problem-selection-heuristics/video-resources.md) \| [Practice](21-contest-engineering/problem-selection-heuristics/practice-problems.md) |
+| 409 | Virtual Contest Simulation and Rigorous Upsolving Protocol | [Open Topic](21-contest-engineering/virtual-contests-and-upsolving/README.md) | Beginner | Not Started | [Videos](21-contest-engineering/virtual-contests-and-upsolving/video-resources.md) \| [Practice](21-contest-engineering/virtual-contests-and-upsolving/practice-problems.md) |
+
+### 22. Quant and HFT Specialisation
+
+Master Domain Index: [`Open Domain Index`](22-quant-hft-specialisation/README.md)
+
+| No. | Topic | Learning Material | Difficulty | Status | Resources |
+|:---:|:---|:---:|:---:|:---:|:---:|
+| 410 | Competitive Programming vs. Production HFT Systems | [Open Topic](22-quant-hft-specialisation/cp-vs-hft-systems-clarity/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/cp-vs-hft-systems-clarity/video-resources.md) \| [Practice](22-quant-hft-specialisation/cp-vs-hft-systems-clarity/practice-problems.md) |
+| 411 | Discrete Probability and Stochastic Processes | [Open Topic](22-quant-hft-specialisation/discrete-probability-in-trading/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/discrete-probability-in-trading/video-resources.md) \| [Practice](22-quant-hft-specialisation/discrete-probability-in-trading/practice-problems.md) |
+| 412 | Expected Value, Gambler's Ruin and Kelly Criterion | [Open Topic](22-quant-hft-specialisation/expected-value-and-betting-strategies/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/expected-value-and-betting-strategies/video-resources.md) \| [Practice](22-quant-hft-specialisation/expected-value-and-betting-strategies/practice-problems.md) |
+| 413 | Combinatorics and Counting State Transitions | [Open Topic](22-quant-hft-specialisation/combinatorics-and-market-states/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/combinatorics-and-market-states/video-resources.md) \| [Practice](22-quant-hft-specialisation/combinatorics-and-market-states/practice-problems.md) |
+| 414 | Number Theory Foundations in Quantitative Research | [Open Topic](22-quant-hft-specialisation/number-theory-in-cryptography-and-quant/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/number-theory-in-cryptography-and-quant/video-resources.md) \| [Practice](22-quant-hft-specialisation/number-theory-in-cryptography-and-quant/practice-problems.md) |
+| 415 | Game Theory, Zero-Sum Games and Market Arbitrage | [Open Topic](22-quant-hft-specialisation/game-theory-and-arbitrage/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/game-theory-and-arbitrage/video-resources.md) \| [Practice](22-quant-hft-specialisation/game-theory-and-arbitrage/practice-problems.md) |
+| 416 | Monte Carlo Simulations and Randomized Methods | [Open Topic](22-quant-hft-specialisation/randomised-algorithms-and-monte-carlo/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/randomised-algorithms-and-monte-carlo/video-resources.md) \| [Practice](22-quant-hft-specialisation/randomised-algorithms-and-monte-carlo/practice-problems.md) |
+| 417 | Specialized Data Structures in Trading Systems | [Open Topic](22-quant-hft-specialisation/advanced-data-structures-in-trading/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/advanced-data-structures-in-trading/video-resources.md) \| [Practice](22-quant-hft-specialisation/advanced-data-structures-in-trading/practice-problems.md) |
+| 418 | Event Schedulers and Priority Queue Simulators | [Open Topic](22-quant-hft-specialisation/heaps-and-priority-queues-in-simulators/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/heaps-and-priority-queues-in-simulators/video-resources.md) \| [Practice](22-quant-hft-specialisation/heaps-and-priority-queues-in-simulators/practice-problems.md) |
+| 419 | Order Statistic Trees for Real-Time Cumulative Depth | [Open Topic](22-quant-hft-specialisation/order-statistic-trees-and-depth/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/order-statistic-trees-and-depth/video-resources.md) \| [Practice](22-quant-hft-specialisation/order-statistic-trees-and-depth/practice-problems.md) |
+| 420 | Bit Manipulation, Bitfields and Compact Exchange Encoding | [Open Topic](22-quant-hft-specialisation/bit-manipulation-and-bitfields/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/bit-manipulation-and-bitfields/video-resources.md) \| [Practice](22-quant-hft-specialisation/bit-manipulation-and-bitfields/practice-problems.md) |
+| 421 | CPU Cache Hierarchy and L1/L2 Latency Engineering | [Open Topic](22-quant-hft-specialisation/cache-efficiency-and-l1-l2-latencies/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/cache-efficiency-and-l1-l2-latencies/video-resources.md) \| [Practice](22-quant-hft-specialisation/cache-efficiency-and-l1-l2-latencies/practice-problems.md) |
+| 422 | Memory Layouts: Array of Structures vs. Structure of Arrays | [Open Topic](22-quant-hft-specialisation/memory-layout-aos-vs-soa/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/memory-layout-aos-vs-soa/video-resources.md) \| [Practice](22-quant-hft-specialisation/memory-layout-aos-vs-soa/practice-problems.md) |
+| 423 | Branch Prediction, CPU Pipelines and Branchless Code | [Open Topic](22-quant-hft-specialisation/cpu-performance-and-branch-prediction/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/cpu-performance-and-branch-prediction/video-resources.md) \| [Practice](22-quant-hft-specialisation/cpu-performance-and-branch-prediction/practice-problems.md) |
+| 424 | Low-Latency Limit Order Book & CPU Cache-Line Architecture | [Open Topic](22-quant-hft-specialisation/orderbook-and-cache/README.md) | Quant | **Completed** | [Videos](22-quant-hft-specialisation/orderbook-and-cache/video-resources.md) \| [Practice](22-quant-hft-specialisation/orderbook-and-cache/practice-problems.md) |
+| 425 | Event-Driven Market Simulation Mechanics | [Open Topic](22-quant-hft-specialisation/event-driven-market-simulation/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/event-driven-market-simulation/video-resources.md) \| [Practice](22-quant-hft-specialisation/event-driven-market-simulation/practice-problems.md) |
+| 426 | Zero-Allocation C++20 and Lock-Free Ring Buffers | [Open Topic](22-quant-hft-specialisation/low-latency-cpp-fundamentals/README.md) | Quant | Not Started | [Videos](22-quant-hft-specialisation/low-latency-cpp-fundamentals/video-resources.md) \| [Practice](22-quant-hft-specialisation/low-latency-cpp-fundamentals/practice-problems.md) |
 
 ---
 
 ## Core Learning Protocol: 7-Step Mastery Loop
 
-1. **Read & Absorb**: Study the conceptual invariants in `theory.md` and `README.md`.
-2. **Watch**: View the curated video from `video-resources.md` to build geometric and dynamic intuition.
-3. **Trace**: Perform a manual execution trace on paper following `dry-run.md`.
-4. **Code from Scratch**: Recreate `implementation.cpp` in Ubuntu without looking at reference code.
-5. **Inspect & Compare**: Diff your code against `implementation.cpp` and verify C++20 compilation.
-6. **Solve Graded Problems**: Clear all 3 tiers in `practice-problems.md` (Beginner $\to$ Intermediate $\to$ Advanced).
-7. **Document Mistakes**: Record every bug, TLE, or incorrect deduction in `26-mistakes-and-revisions/`.
+1. **Conceptual Absorption**: Study the definition, invariants, and mathematical proofs in `README.md` and `theory.md`.
+2. **Visual & Intuitive Trace**: Walk through `visual-explanation.md` and `dry-run.md` to build geometric and state intuition.
+3. **Curated Video Study**: Watch the curated video lecture listed in `video-resources.md`.
+4. **Clean Implementation**: Implement the algorithm from scratch in C++20 on Ubuntu without referencing notes.
+5. **Validation & Verification**: Verify against `implementation.cpp` and run local stress-testing harnesses.
+6. **Graded Practice**: Solve all 3 problem tiers (Beginner $\to$ Intermediate $\to$ Advanced) in `practice-problems.md`.
+7. **Mistake Logging**: Document any misconceptions, edge-case failures, or false paths in `26-mistakes-and-revisions/`.
+
+---
+
+## Automated Validation Script
+
+To automatically verify that all 426 topics have intact pages, valid relative links, and complete resource sections, run:
+
+```bash
+node validate_repo.mjs
+```

@@ -1,67 +1,25 @@
-# Contest Engineering & Robust Testing Systems
+# 21. Contest Engineering
 
-This module focuses on contest pragmatics, debugging infrastructure, stress-testing harnesses, compiler sanitizers, and numerical precision safety.
+Master learning directory for **21. Contest Engineering** containing detailed subtopic pages, C++20 implementations, and practice progressions.
 
----
+## Subtopic Directory
 
-## 1. Automated Stress-Testing Harness
-
-When facing `Wrong Answer on test 47` with no visible test case, the deterministic way to debug is differential fuzzing:
-1. Write `solution.cpp` (your fast $O(N \log N)$ or $O(N)$ candidate solution).
-2. Write `brute.cpp` (a simple, undeniably correct $O(N^2)$ or $O(2^N)$ brute force).
-3. Write `gen.cpp` (a randomized input generator generating tests matching constraints).
-4. Run `stress.sh` to find the exact minimal failing input.
-
-### `stress.sh` (Linux Bash Script)
-```bash
-#!/usr/bin/env bash
-set -e
-
-g++ -std=c++20 -O2 solution.cpp -o solution
-g++ -std=c++20 -O2 brute.cpp -o brute
-g++ -std=c++20 -O2 gen.cpp -o gen
-
-for ((i = 1; ; ++i)); do
-    ./gen > in.txt
-    ./solution < in.txt > out_fast.txt
-    ./brute < in.txt > out_brute.txt
-
-    if ! cmp -s out_fast.txt out_brute.txt; then
-        echo "Mismatch found on test $i!"
-        echo "=== Input ==="
-        cat in.txt
-        echo "=== Fast Solution Output ==="
-        cat out_fast.txt
-        echo "=== Brute Solution Output ==="
-        cat out_brute.txt
-        break
-    fi
-    if (( i % 100 == 0 )); then
-        echo "Passed $i random tests..."
-    fi
-done
-```
-
----
-
-## 2. Compiler Diagnostics and Sanitizers
-
-When developing locally on Ubuntu VMware with `g++ 15.2.0`, use Address and Undefined Behavior sanitizers during debugging:
-
-```bash
-g++ -std=c++20 -fsanitize=address,undefined -g -Wall -Wextra -Wshadow solution.cpp -o solution_debug
-```
-- **AddressSanitizer (`-fsanitize=address`)**: Catches out-of-bounds array access, use-after-free, memory leaks.
-- **UndefinedBehaviorSanitizer (`-fsanitize=undefined`)**: Catches signed integer overflow, division by zero, invalid bitshifts ($1 \ll 35$ on 32-bit int).
-
----
-
-## 3. Increasing Linux Stack Limit for Deep Recursion
-
-On Ubuntu / Linux, the default stack limit is typically 8 MB. To prevent `Segmentation Fault` on tree DFS of depth $N = 2 \times 10^5$:
-
-```bash
-ulimit -s unlimited
-./solution
-```
-In contest environments where stack is shared with heap (e.g. Codeforces 256MB), recursive DFS is safe if recursion depth is within limits, but iterative DFS or expanding stack via assembly/pthreads can be used if needed.
+| No. | Subtopic | Learning Material | Difficulty | Status |
+|:---:|:---|:---:|:---:|:---:|
+| 1 | Fast I/O Mechanics and Stream Buffer Sizing | [Open Topic](fast-input-output-systems/README.md) | Beginner | Not Started |
+| 2 | Integer Overflow Prevention and Modulo Invariants | [Open Topic](integer-overflow-prevention/README.md) | Beginner | Not Started |
+| 3 | Floating-Point Precision and Epsilon Comparisons | [Open Topic](floating-point-precision-safety/README.md) | Beginner | Not Started |
+| 4 | Memory Allocation and Cache-Conscious Layouts | [Open Topic](memory-optimisation-and-cache/README.md) | Intermediate | Not Started |
+| 5 | Recursion Stack Expansion on Linux and Judge Limits | [Open Topic](recursion-stack-limits-and-expansion/README.md) | Beginner | Not Started |
+| 6 | Iterative vs. Recursive Graph Traversals | [Open Topic](iterative-vs-recursive-dfs/README.md) | Beginner | Not Started |
+| 7 | Compiler Flags (-O2, -O3, Sanitizers, Native Flags) | [Open Topic](compiler-optimisation-flags/README.md) | Beginner | Not Started |
+| 8 | AddressSanitizer and UndefinedBehaviorSanitizer Debugging | [Open Topic](debugging-techniques-and-sanitizers/README.md) | Beginner | Not Started |
+| 9 | Differential Stress-Testing Harness (Solution vs. Brute) | [Open Topic](stress-testing-harness/README.md) | Beginner | Not Started |
+| 10 | Random Test Case Generation for Trees, Graphs and Arrays | [Open Topic](random-test-generators/README.md) | Beginner | Not Started |
+| 11 | Fuzz Testing and Automatic Counterexample Discovery | [Open Topic](differential-testing-methodology/README.md) | Intermediate | Not Started |
+| 12 | Edge Case Taxonomy (Zero, Degenerate, Disconnected) | [Open Topic](edge-case-identification/README.md) | Beginner | Not Started |
+| 13 | Formal Loop Invariant and Exchange Proofs in Contests | [Open Topic](correctness-proofs-and-invariants/README.md) | Intermediate | Not Started |
+| 14 | Editorial Reading Methodology and Pattern Extraction | [Open Topic](editorial-reading-and-deconstruction/README.md) | Beginner | Not Started |
+| 15 | Contest Strategy, Time Allocation and Problem Triage | [Open Topic](contest-strategy-and-time-management/README.md) | Beginner | Not Started |
+| 16 | Reading Difficulty Curves and Skipping Unproductive Traps | [Open Topic](problem-selection-heuristics/README.md) | Beginner | Not Started |
+| 17 | Virtual Contest Simulation and Rigorous Upsolving Protocol | [Open Topic](virtual-contests-and-upsolving/README.md) | Beginner | Not Started |

@@ -1,0 +1,3 @@
+# Subset Generation (2^N State Space) — GitHub Repositories
+- [USACO Guide Repo](https://github.com/cpinitiative/usaco-guide)
+- [CP-Algorithms Repo](https://github.com/cp-algorithms/cp-algorithms)

@@ -1,12 +1,23 @@
-# 01. Complexity Analysis & Constraint Mapping
+# 01. Complexity Analysis
 
-This module establishes formal asymptotic reasoning, operational limits in competitive programming contests, and recurrence relations.
+Master learning directory for **01. Complexity Analysis** containing detailed subtopic pages, C++20 implementations, and practice progressions.
 
----
+## Subtopic Directory
 
-## Subtopics & Planned Modules
-
-1. **`asymptotic-notation/`**: Formal definitions of Big-$O$, Big-$\Theta$, Big-$\Omega$, amortized complexity analysis.
-2. **`constraint-mapping/`**: Reading contest limits ($N \le 10^5 \implies O(N \log N)$, $N \le 20 \implies O(2^N)$), time limit budgeting ($\approx 10^8$ basic operations / sec).
-3. **`recurrence-relations/`**: Master Theorem, recursion trees, substitution method, analysis of divide-and-conquer paradigms.
-4. **`memory-limits/`**: Translating memory constraints (256 MB, 512 MB) into maximum element counts per data type.
+| No. | Subtopic | Learning Material | Difficulty | Status |
+|:---:|:---|:---:|:---:|:---:|
+| 1 | Big-O Notation and Upper Bounds | [Open Topic](big-o-notation/README.md) | Beginner | Not Started |
+| 2 | Big-Theta and Big-Omega Tight Asymptotics | [Open Topic](big-theta-and-big-omega/README.md) | Beginner | Not Started |
+| 3 | Time Complexity Formal Derivations | [Open Topic](time-complexity-analysis/README.md) | Beginner | Not Started |
+| 4 | Space Complexity and Auxiliary Memory | [Open Topic](space-complexity-analysis/README.md) | Beginner | Not Started |
+| 5 | Amortised Analysis (Aggregate, Banker, Potential) | [Open Topic](amortised-analysis/README.md) | Intermediate | Not Started |
+| 6 | Worst-Case, Average-Case and Best-Case Analysis | [Open Topic](worst-average-best-case/README.md) | Beginner | Not Started |
+| 7 | Recurrence Relations Formulation | [Open Topic](recurrence-relations/README.md) | Intermediate | Not Started |
+| 8 | Recursion Tree Analysis Method | [Open Topic](recursion-tree-method/README.md) | Intermediate | Not Started |
+| 9 | Master Theorem and Akra-Bazzi Method | [Open Topic](master-theorem/README.md) | Intermediate | Not Started |
+| 10 | Substitution Method and Inductive Bounds | [Open Topic](substitution-method/README.md) | Intermediate | Not Started |
+| 11 | Comparison Sorting Lower Bound Omega(N log N) | [Open Topic](sorting-complexity-bounds/README.md) | Intermediate | Not Started |
+| 12 | Complexity of Graph Traversal and Shortest Paths | [Open Topic](graph-algorithm-complexity/README.md) | Intermediate | Not Started |
+| 13 | Constraint-to-Complexity Mapping Guide | [Open Topic](constraint-to-complexity-mapping/README.md) | Beginner | Not Started |
+| 14 | Memory Limits, Page Faults and Cache Behavior | [Open Topic](memory-complexity-and-cache/README.md) | Intermediate | Not Started |
+| 15 | Constant Factor Acceleration and Pruning | [Open Topic](constant-factor-optimisation/README.md) | Advanced | Not Started |

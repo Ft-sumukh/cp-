@@ -1,14 +1,21 @@
 # 14. Bit Manipulation
 
-This module covers bitwise arithmetic, algebraic properties of XOR, fast compiler builtins, and subset iterations.
+Master learning directory for **14. Bit Manipulation** containing detailed subtopic pages, C++20 implementations, and practice progressions.
 
----
+## Subtopic Directory
 
-## Subtopics & Planned Modules
-
-1. **`bitwise-operations/`**: AND, OR, XOR, NOT, left/right shifts, setting/clearing/toggling bits.
-2. **`compiler-builtins/`**: `__builtin_popcountll`, `__builtin_clzll` (leading zeros), `__builtin_ctzll` (trailing zeros), C++20 `<bit>` library.
-3. **`xor-properties/`**: Invertibility ($A \oplus A = 0$), prefix XOR queries, linear basis of XOR spaces.
-4. **`submask-iteration/`**: The `s = (s - 1) & mask` idiom for iterating all submasks of a mask in $O(3^N)$.
-5. **`binary-trie/`**: Finding maximum XOR sum of two elements in $O(30)$ per query.
-6. **`sos-dp-foundations/`**: Sum Over Subsets dynamic programming using bitwise transitions.
+| No. | Subtopic | Learning Material | Difficulty | Status |
+|:---:|:---|:---:|:---:|:---:|
+| 1 | Binary Representation and Two's Complement | [Open Topic](binary-representation/README.md) | Beginner | Not Started |
+| 2 | Bit Manipulation & Bitwise Operations (Compiler Intrinsics) | [Open Topic](bitwise-operations-and-tricks/README.md) | Beginner | Completed |
+| 3 | Bitwise Operators (AND, OR, XOR, NOT) | [Open Topic](bitwise-and-or-xor-not/README.md) | Beginner | Not Started |
+| 4 | Bit Shifts (Logical vs. Arithmetic) and Rotations | [Open Topic](bit-shifts-and-rotations/README.md) | Beginner | Not Started |
+| 5 | Bitmask Mechanics (Set, Clear, Toggle, Check Bit i) | [Open Topic](set-clear-toggle-check-bit/README.md) | Beginner | Not Started |
+| 6 | Brian Kernighan's Bit Counting Algorithm | [Open Topic](brian-kernighan-algorithm/README.md) | Beginner | Not Started |
+| 7 | Population Count and Leading/Trailing Zeroes Intrinsics | [Open Topic](population-count-intrinsics/README.md) | Beginner | Not Started |
+| 8 | Algebraic Properties of XOR and Linear Independence | [Open Topic](xor-properties-and-basis/README.md) | Intermediate | Not Started |
+| 9 | Submask Enumeration Idiom in O(3^N) | [Open Topic](submask-enumeration/README.md) | Intermediate | Not Started |
+| 10 | Bitmask DP and Exponential Subset States | [Open Topic](bitmask-dynamic-programming/README.md) | Intermediate | Not Started |
+| 11 | Binary Trie for Maximum/Minimum XOR Queries | [Open Topic](binary-trie-xor-queries/README.md) | Intermediate | Not Started |
+| 12 | Sum Over Subsets (SOS) DP in O(N * 2^N) | [Open Topic](sum-over-subsets-sos-dp/README.md) | Advanced | Not Started |
+| 13 | Bitset Vectorization and Constant Factor Optimization | [Open Topic](bitset-optimisation/README.md) | Intermediate | Not Started |
