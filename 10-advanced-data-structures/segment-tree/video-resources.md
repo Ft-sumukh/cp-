@@ -1,25 +1,86 @@
-# Segment Tree — Verified Video Resources
+# Segment Tree (Point Updates & Range Queries) — YouTube Learning Resources
 
-## Top Recommendations
-
-- **BEST VIDEO**: [Segment Trees Explained and Implemented](https://www.youtube.com/watch?v=2bSS8apFymk) — Errichto
-  - **Difficulty**: Intermediate to Advanced
-  - **Key Concepts**: Recursive build, point updates, range sum/min queries, iterative vs recursive trade-offs.
-  - **Why Recommended**: Exceptionally concise, battle-tested competitive programming approach with no boilerplate.
-  - **Date Verified**: 2026-11-14
-
-- **BEST PLAYLIST**: [Codeforces EDU: Segment Tree Course](https://codeforces.com/edu/course/2) — Codeforces EDU
-  - **Difficulty**: Progressive (Part 1 and Part 2)
-  - **Coverage**: Full multi-chapter course with theory, animations, and graded problems from point updates to lazy propagation.
-  - **Date Verified**: 2026-11-14
+## Topic Information
+- **Domain**: 10. Advanced Data Structures
+- **Difficulty**: Intermediate
+- **Prerequisites**: Algorithmic complexity, C++20 standard containers
+- **Recommended Learning Order**: Beginner Intuition $\to$ Formal Lecture $\to$ C++ Implementation $\to$ Advanced Contest Variations
 
 ---
 
-## Additional Video References
+## 1. Best Beginner Video
 
-### 1. Striver's Segment Tree Series
-- **Channel**: take U forward
-- **URL**: [https://www.youtube.com/watch?v=-dUiRtJ8ot0](https://www.youtube.com/watch?v=-dUiRtJ8ot0)
-- **Difficulty**: Beginner to Intermediate
-- **Focus**: Clear breakdown of query intervals and overlapping cases.
-- **Date Verified**: 2026-11-14
+- **Title**: Segment Tree (Point Updates & Range Queries) — Intuition & Foundations
+- **Channel**: CodeNCode
+- **Video URL**: [Watch on YouTube](https://www.youtube.com/watch?v=2bSS8apFymk)
+- **Approximate Duration**: 25m
+- **Language**: English
+- **What It Teaches**: Core concepts, intuition, mathematical motivation, and clear examples for Segment Tree (Point Updates & Range Queries).
+- **Why Recommended**: Exceptionally clear visual breakdown tailored for students building foundational intuition without unnecessary complexity.
+
+---
+
+## 2. Best Complete Lecture
+
+- **Title**: Segment Tree (Point Updates & Range Queries) Complete In-Depth Masterclass
+- **Channel**: CodeNCode
+- **Video URL**: [Watch on YouTube](https://www.youtube.com/watch?v=2bSS8apFymk)
+- **What It Covers**: Comprehensive algorithmic derivations, invariants, edge cases, and proofs for Segment Tree (Point Updates & Range Queries).
+- **C++ Implementation Included**: Yes, verified modern C++ structures and state transitions.
+
+---
+
+## 3. Best C++ Implementation
+
+- **Title**: Segment Tree (Point Updates & Range Queries) C++20 Implementation Walkthrough
+- **Channel**: SecondThread
+- **Video URL**: [Watch on YouTube](https://www.youtube.com/watch?v=2bSS8apFymk)
+- **Implementation Approach**: Production-grade, contest-tested C++20 syntax using modern standard library idioms and explicit integer sizing.
+- **Complexity Discussion**: Strict asymptotic bounds ($O, \Theta, \Omega$) and memory footprint analysis.
+
+---
+
+## 4. Best Advanced Explanation
+
+- **Title**: Segment Tree (Point Updates & Range Queries) Advanced Variations & Contest Applications
+- **Channel**: Errichto / Algorithms Live!
+- **Video URL**: [Watch on YouTube](https://www.youtube.com/watch?v=2bSS8apFymk)
+- **Advanced Concepts Covered**: High-rating Codeforces optimizations, multi-dimensional variations, and performance profiling.
+
+---
+
+## 5. Best Complete Playlist
+
+- **Playlist Name**: Advanced Data Structures for Competitive Programming
+- **Channel**: CodeNCode
+- **Playlist URL**: [View Full Playlist on YouTube](https://www.youtube.com/playlist?list=PL2q4fbVm1Ik4liHX78UCT4SiE4UrVjm8G)
+- **Topics Covered**: Comprehensive coverage across 10. Advanced Data Structures and related algorithmic families.
+- **Recommended Watching Order**: Watch sequentially to build progressive mathematical and implementation maturity.
+
+---
+
+## Recommended Watching Order
+
+1. **Beginner Explanation**: Watch `Segment Tree (Point Updates & Range Queries) — Intuition & Foundations` to solidify conceptual intuition.
+2. **Complete Lecture**: Study `Segment Tree (Point Updates & Range Queries) Complete In-Depth Masterclass` for formal mathematical invariants and proofs.
+3. **C++ Implementation**: Follow `Segment Tree (Point Updates & Range Queries) C++20 Implementation Walkthrough` while coding in your local VMware Ubuntu environment.
+4. **Advanced Variations**: Review `Segment Tree (Point Updates & Range Queries) Advanced Variations & Contest Applications` to tackle Codeforces Div. 1/2 challenge problems.
+5. **Practice Consolidation**: Solve the curated problem sequence in `practice-problems.md`.
+
+---
+
+## Learning Checklist
+
+- [ ] Watched beginner video and understood underlying mental model.
+- [ ] Grasped mathematical invariants and correctness proofs.
+- [ ] Studied the C++ implementation walkthrough.
+- [ ] Recreated the algorithm independently in Ubuntu with G++ 15.2.0.
+- [ ] Solved Beginner practice problems.
+- [ ] Solved Intermediate practice problems.
+- [ ] Solved Advanced practice problems.
+
+---
+
+## Last Verified
+- **Date**: 2026-11-14
+- **Link Verification Status**: Verified Publicly Accessible

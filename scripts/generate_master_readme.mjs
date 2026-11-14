@@ -34,54 +34,19 @@ An institutional-grade, comprehensively structured Competitive Programming repos
 
 ---
 
-## Repository Architecture
+## Repository Master Navigation & Resources
 
-\`\`\`text
-competitive-programming-mastery/
-├── README.md                          # Master Portal & 426-Topic Clickable Index
-├── ROADMAP.md                         # 5-Stage Progressive Learning Roadmap
-├── PROGRESS.md                        # Master Progress Dashboard & Verification Checklists
-├── RESOURCES.md                       # Verification Protocol & Authoritative Catalog
-├── CONTRIBUTING.md                    # C++20 Standards, Style Guide & Directory Rules
-├── LICENSE                            # MIT License
-├── validate_repo.mjs                  # Automated Quality-Control & Link Validation Script
-│
-├── 00-cpp-foundations/                # Variables, Types, STL Containers, C++20 Features
-├── 01-complexity-analysis/            # Asymptotics, Recurrences, Constraint Mapping
-├── 02-basic-problem-solving/          # Prefix Sums, Two Pointers, Difference Arrays
-├── 03-searching-and-optimisation/     # Discrete & Predicate Binary Search, Ternary Search
-├── 04-recursion-and-backtracking/     # State Trees, Pruning, Branch & Bound
-├── 05-sorting/                        # Stability, Custom Comparators, Radix/Merge
-├── 06-basic-data-structures/          # Monotonic Stacks/Queues, Deques, Circular Buffers
-├── 07-trees/                          # LCA, Binary Lifting, Tree DP, HLD, Centroids
-├── 08-graphs/                         # BFS/DFS, Shortest Paths, MST, DSU, 2-SAT, Flows
-├── 09-dynamic-programming/            # Knapsack, Interval, Digit, Bitmask, CHT, Aliens
-├── 10-advanced-data-structures/       # Segment Tree, Lazy, Treap, Persistent ST, Mo
-├── 11-string-algorithms/              # Rolling Hash, KMP, Z-Algorithm, Suffix Automaton
-├── 12-number-theory/                  # Sieve, Modular Arithmetic, CRT, Mobius, Pollard Rho
-├── 13-combinatorics/                  # Stars & Bars, Catalan Numbers, Lucas, Polya
-├── 14-bit-manipulation/               # Bitmasks, SOS DP, Binary Tries, Linear Basis
-├── 15-probability-and-statistics/     # Linearity of Expectation, Markov Chains
-├── 16-game-theory/                    # Nim, Sprague-Grundy Theorem, Mex Rule
-├── 17-computational-geometry/         # Vectors, Convex Hull, Sweep Line, Half-Plane
-├── 18-advanced-graph-theory/          # Dinic Max-Flow, Hopcroft-Karp, MCMF, Connectivity
-├── 19-advanced-algorithmic-techniques/# Parallel Binary Search, CDQ, Small-to-Large
-├── 20-advanced-mathematics/           # Matrix Exponentiation, FFT, NTT, Lagrange
-├── 21-contest-engineering/            # Stress Testing Harness, Overflow, Sanitizers
-├── 22-quant-hft-specialisation/       # Cache Locality, Low-Latency L2 Order Book
-│
-├── 23-codeforces/                     # Problem Solutions Categorized by Rating (800 - 2000+)
-├── 24-contest-practice/               # Virtual Contest Logs & Upsolving Protocols
-├── 25-templates/                      # Battle-Tested C++20 CP Templates & Boilerplates
-├── 26-mistakes-and-revisions/         # Error Taxonomy & Active Recall Ledger
-└── 27-personal-notes/                 # Ad-hoc Pattern Discoveries & Mathematical Proofs
-\`\`\`
+- [Master YouTube Video Directory (\`YOUTUBE_RESOURCES.md\`)](YOUTUBE_RESOURCES.md) — Comprehensive master catalog of video lectures & playlists
+- [5-Stage Progressive Learning Roadmap (\`ROADMAP.md\`)](ROADMAP.md) — From Bronze/CF 800 to Grandmaster & Quant Systems
+- [Master Progress Dashboard (\`PROGRESS.md\`)](PROGRESS.md) — Live tracking of all 426 subtopics & revision logs
+- [Resource Verification Standard (\`RESOURCES.md\`)](RESOURCES.md) — Strict evaluation protocols preventing link rot
+- [Automated Repository Quality Validator (\`validate_repo.mjs\`)](validate_repo.mjs) — Automated link & file consistency checker
 
 ---
 
-## Master Topic Index (426 Topics with Direct Learning Links)
+## Master Topic Index (426 Topics with Direct Learning & Video Links)
 
-Every single subtopic in the curriculum has its own dedicated directory and learning page. Click any link in the **Learning Material** column to access its full documentation, C++20 reference code, theoretical proofs, visual diagrams, and graded problems.
+Every individual subtopic in the curriculum has its own dedicated directory, its own learning page, and its own curated YouTube video guide.
 
 `;
 
@@ -90,17 +55,16 @@ let globalIndex = 1;
 for (const domain of domains) {
   content += `\n### ${domain.name}\n\n`;
   content += `Master Domain Index: [\`Open Domain Index\`](${domain.dir}/README.md)\n\n`;
-  content += `| No. | Topic | Learning Material | Difficulty | Status | Resources |\n`;
-  content += `|:---:|:---|:---:|:---:|:---:|:---:|\n`;
+  content += `| No. | Topic | Learning Material | Video Resources | Practice | Difficulty | Status |\n`;
+  content += `|:---:|:---|:---:|:---:|:---:|:---:|:---:|\n`;
 
   for (const topic of domain.topics) {
     const statusBadge = topic.status === 'Completed' ? '**Completed**' : (topic.status || 'Not Started');
     const relativeLink = `[Open Topic](${domain.dir}/${topic.slug}/README.md)`;
-    const videoLink = `[Videos](${domain.dir}/${topic.slug}/video-resources.md)`;
-    const practiceLink = `[Practice](${domain.dir}/${topic.slug}/practice-problems.md)`;
-    const resourcesCol = `${videoLink} \\| ${practiceLink}`;
+    const videoLink = `[Watch Video](${domain.dir}/${topic.slug}/video-resources.md)`;
+    const practiceLink = `[Problems](${domain.dir}/${topic.slug}/practice-problems.md)`;
 
-    content += `| ${globalIndex} | ${topic.title} | ${relativeLink} | ${topic.difficulty} | ${statusBadge} | ${resourcesCol} |\n`;
+    content += `| ${globalIndex} | ${topic.title} | ${relativeLink} | ${videoLink} | ${practiceLink} | ${topic.difficulty} | ${statusBadge} |\n`;
     globalIndex++;
   }
 }
@@ -129,4 +93,4 @@ node validate_repo.mjs
 `;
 
 fs.writeFileSync(path.join(rootDir, 'README.md'), content, 'utf-8');
-console.log(`Generated root README.md with ${globalIndex - 1} subtopics.`);
+console.log(`Updated root README.md with ${globalIndex - 1} subtopics.`);
