@@ -1,0 +1,19 @@
+# Binaries and Object Files
+*.o
+*.obj
+*.out
+*.exe
+solution
+a.out
+
+# Temporary / Editor Files
+*~
+*.swp
+*.swo
+.DS_Store
+.vscode/
+.idea/
+
+# Core dumps and logs
+*.log
+core
