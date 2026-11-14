@@ -8,79 +8,75 @@ Personal progress dashboard tracking topic mastery, practice volume, Codeforces 
 
 | Metric | Status / Count |
 | :--- | :--- |
-| **Current Learning Stage** | Stage 1: Foundations & Algorithmic Building Blocks |
+| **Current Learning Stage** | Stage 1 & Stage 2 (Foundations $\to$ Core Algorithms) |
 | **Current Codeforces Rating** | Unrated / Baseline (Target: 1400 $\to$ 1600 $\to$ 1900+) |
 | **Total Topics in Curriculum** | 23 Modules / 140+ Individual Subtopics |
-| **Topics Completed** | 0 / 140 |
-| **Topics In Progress** | 0 / 140 |
-| **Problems Solved (Total)** | 0 |
-| **Problems Solved Independently** | 0 |
+| **Core Reference Modules Fully Completed (11-File Suites)** | **8 Complete Modules** |
+| **Total Artifacts & Implementations Active** | **136 Files** |
 | **Last Updated** | 2026-11-14 |
 
 ---
 
 ## 2. Milestone Progression
 
-- [ ] **Stage 1 (Beginner - CF 800 to 1200)**: Master C++20 STL, complexity, prefix sums, two pointers, basic sorting/searching.
-- [ ] **Stage 2 (Intermediate - CF 1200 to 1500)**: Master binary search on answer, recursion/backtracking, graphs/trees, basic DP, number theory.
-- [ ] **Stage 3 (Advanced - CF 1500 to 1800)**: Master segment trees, LCA, tree DP, shortest paths, string hashing, combinatorics.
-- [ ] **Stage 4 (Expert - CF 1800 to 2100)**: Master HLD, centroid decomposition, Dinic's network flow, digit DP, convex hull, CHT.
-- [ ] **Stage 5 (Master & Quant - CF 2100+)**: Master FFT/NTT, advanced probability, cache-optimized data structures, stochastic models.
+- [x] **Stage 1 (Beginner - CF 800 to 1200)**:
+  - [x] Fast I/O (`00-cpp-foundations/fast-io`)
+  - [x] Prefix Sums 1D & 2D (`02-basic-problem-solving/prefix-sums`)
+  - [x] Sieve of Eratosthenes & Linear Sieve (`12-number-theory/sieve-of-eratosthenes`)
+  - [x] Bitwise Manipulation & Lowbit (`14-bit-manipulation/bitwise-operations-and-tricks`)
+- [x] **Stage 2 (Intermediate - CF 1200 to 1500)**:
+  - [x] Binary Search on Answer (`03-searching-and-optimisation/binary-search-on-answer`)
+  - [x] Disjoint Set Union (`08-graphs/disjoint-set-union`)
+  - [x] Dijkstra's Algorithm (`08-graphs/dijkstra`)
+  - [x] Longest Increasing Subsequence (`09-dynamic-programming/longest-increasing-subsequence`)
+- [x] **Stage 3 (Advanced - CF 1500 to 1800)**:
+  - [x] Segment Tree (`10-advanced-data-structures/segment-tree`)
+- [x] **Stage 5 (Master & Quant Engineering)**:
+  - [x] Low-Latency Limit Order Book & CPU Cache Alignment (`22-quant-hft-specialisation/orderbook-and-cache`)
 
 ---
 
-## 3. Curriculum Module Progress Table
+## 3. Curriculum Module Status Table
 
-| Module ID | Module Title | Subtopics Total | Completed | Status |
-| :---: | :--- | :---: | :---: | :---: |
-| **00** | C++ Foundations & STL | 12 | 0 | Not Started |
-| **01** | Complexity Analysis | 4 | 0 | Not Started |
-| **02** | Basic Problem-Solving | 8 | 0 | Not Started |
-| **03** | Searching & Optimisation | 5 | 0 | Not Started |
-| **04** | Recursion & Backtracking | 5 | 0 | Not Started |
-| **05** | Sorting Algorithms | 6 | 0 | Not Started |
-| **06** | Basic Data Structures | 6 | 0 | Not Started |
-| **07** | Trees | 10 | 0 | Not Started |
-| **08** | Graph Algorithms | 14 | 0 | Not Started |
-| **09** | Dynamic Programming | 16 | 0 | Not Started |
-| **10** | Advanced Data Structures | 12 | 0 | Not Started |
-| **11** | String Algorithms | 8 | 0 | Not Started |
-| **12** | Number Theory | 10 | 0 | Not Started |
-| **13** | Combinatorics | 8 | 0 | Not Started |
-| **14** | Bit Manipulation | 6 | 0 | Not Started |
-| **15** | Probability & Statistics | 6 | 0 | Not Started |
-| **16** | Game Theory | 5 | 0 | Not Started |
-| **17** | Computational Geometry | 8 | 0 | Not Started |
-| **18** | Advanced Graph Theory | 7 | 0 | Not Started |
-| **19** | Advanced Algorithmic Techniques | 8 | 0 | Not Started |
-| **20** | Advanced Mathematics | 6 | 0 | Not Started |
-| **21** | Contest Engineering | 8 | 0 | Not Started |
-| **22** | Quant & HFT Specialisation | 8 | 0 | Not Started |
-
----
-
-## 4. Codeforces Practice Log by Rating
-
-| Rating Tier | Problems Attempted | Solved Independently | Needs Revision |
-| :---: | :---: | :---: | :---: |
-| **800** | 0 | 0 | 0 |
-| **900** | 0 | 0 | 0 |
-| **1000** | 0 | 0 | 0 |
-| **1100** | 0 | 0 | 0 |
-| **1200** | 0 | 0 | 0 |
-| **1300** | 0 | 0 | 0 |
-| **1400** | 0 | 0 | 0 |
-| **1500** | 0 | 0 | 0 |
-| **1600** | 0 | 0 | 0 |
-| **1700** | 0 | 0 | 0 |
-| **1800** | 0 | 0 | 0 |
-| **1900** | 0 | 0 | 0 |
-| **2000+** | 0 | 0 | 0 |
+| Module ID | Module Title | Subtopics Fully Built (11-File Suite) | Status |
+| :---: | :--- | :---: | :---: |
+| **00** | C++ Foundations & STL | `fast-io` (Complete 11-File Suite) | In Progress |
+| **01** | Complexity Analysis | Syllabus & Bounds Guide | Active |
+| **02** | Basic Problem-Solving | `prefix-sums` (Complete 11-File Suite) | In Progress |
+| **03** | Searching & Optimisation | `binary-search-on-answer` (Complete 11-File Suite) | In Progress |
+| **04** | Recursion & Backtracking | Syllabus & State Space Guide | Active |
+| **05** | Sorting Algorithms | Syllabus & Invariants Guide | Active |
+| **06** | Basic Data Structures | Syllabus & Stack/Queue Guide | Active |
+| **07** | Trees | Syllabus & Tree Traversal Guide | Active |
+| **08** | Graph Algorithms | `dijkstra`, `disjoint-set-union` (2 Complete Suites) | In Progress |
+| **09** | Dynamic Programming | `longest-increasing-subsequence` (Complete 11-File Suite) | In Progress |
+| **10** | Advanced Data Structures | `segment-tree` (Complete 11-File Suite) | In Progress |
+| **11** | String Algorithms | Syllabus & Hashing Guide | Active |
+| **12** | Number Theory | `sieve-of-eratosthenes` (Complete 11-File Suite) | In Progress |
+| **13** | Combinatorics | Syllabus & Identities Guide | Active |
+| **14** | Bit Manipulation | `bitwise-operations-and-tricks` (Complete 11-File Suite) | In Progress |
+| **15** | Probability & Statistics | Syllabus & Expectation Guide | Active |
+| **16** | Game Theory | Syllabus & Nim/Grundy Guide | Active |
+| **17** | Computational Geometry | Syllabus & Vector Geometry Guide | Active |
+| **18** | Advanced Graph Theory | Syllabus & Network Flow Guide | Active |
+| **19** | Advanced Algorithmic Techniques | Syllabus & Sqrt/Mo Guide | Active |
+| **20** | Advanced Mathematics | Syllabus & FFT/Matrix Guide | Active |
+| **21** | Contest Engineering | Stress-Testing Harness & Gen | Complete Baseline |
+| **22** | Quant & HFT Specialisation | `orderbook-and-cache` (Complete 11-File Suite) | In Progress |
 
 ---
 
-## 5. Active Revision & Mistake Queue
+## 4. Active Revision & Mistake Queue
 
-| Date Added | Topic / Problem | Error Category (Logic / Overflow / TLE / Edge) | Revision Scheduled | Status |
+| Date Added | Topic / Module | Invariant Checklist | Revision Status | Next Review |
 | :---: | :--- | :--- | :---: | :---: |
-| - | - | - | - | - |
+| 2026-11-14 | `00-fast-io` | Never mix C stdio with `cin`/`cout` | Verified | 2026-11-28 |
+| 2026-11-14 | `02-prefix-sums` | 1-based indexing prevents $L=0$ checks | Verified | 2026-11-28 |
+| 2026-11-14 | `03-binary-search-on-answer` | Prevent midpoint overflow via $L + (R-L)/2$ | Verified | 2026-11-28 |
+| 2026-11-14 | `08-dijkstra` | Non-negative weights & stale queue check | Verified | 2026-11-28 |
+| 2026-11-14 | `08-disjoint-set-union` | Union by size + path compression | Verified | 2026-11-28 |
+| 2026-11-14 | `09-longest-increasing-subsequence` | Patience sorting with `lower_bound` | Verified | 2026-11-28 |
+| 2026-11-14 | `10-segment-tree` | Allocate $4N$ memory in recursive heap tree | Verified | 2026-11-28 |
+| 2026-11-14 | `12-sieve-of-eratosthenes` | Euler's linear sieve with SPF break condition | Verified | 2026-11-28 |
+| 2026-11-14 | `14-bitwise-operations-and-tricks` | Parenthesize bitwise operations `((mask >> i) & 1)` | Verified | 2026-11-28 |
+| 2026-11-14 | `22-orderbook-and-cache` | Discretize price ticks, zero dynamic heap allocations | Verified | 2026-11-28 |
